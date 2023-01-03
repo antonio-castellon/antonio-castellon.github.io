@@ -1,0 +1,420 @@
+@import url('../fonts/yoster.ttf');
+@font-face {
+    font-family: 'yoster';
+    src: url('../fonts/yoster.ttf');
+}
+@font-face {
+    font-family: 'kongtext';
+    src: url('../fonts/kongtext.ttf');
+}
+
+* {
+    margin: 0;
+    font-family: 'courier', sans-serif;
+	align-items: center;
+
+}
+
+/* .container {
+
+} */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1C012F;
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.left-navbar {
+    margin-left: 3rem;
+}
+
+.left-navbar h2 {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'kongtext', sans-serif;
+    border: 1px solid #ffffff;
+    padding: 10px;
+}
+
+.left-navbar i {
+    display: none;
+}
+
+.right-navbar {
+    margin-right: 3rem;
+}
+
+/* .nav {
+    display: flex;
+} */
+
+.nav a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.nav-item {
+    list-style-type: none;
+    color: #ffffff;
+    padding: 0 1rem;
+    font-family: 'kongtext', sans-serif;
+    font-size: 12px;
+}
+
+.nav-item:hover {
+    color: #F147FF;
+}
+
+
+/* --  Hero Section  ------------------------------------------------------- */
+.hero-section {
+    height: calc(100vh - 20px);
+    background-color: #49145E;
+    /* background-color: #2a0938; */
+    margin-top: 0;
+}
+
+.hero-circle {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #b03ddd;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 120px;
+}
+
+.hero-text {
+    text-align: center;
+    /* margin-top: 180px; */
+}
+
+.hero-text p {
+    font-size: 23px;
+    color: #D93FEC;
+    letter-spacing: 10px;
+}
+
+.hero-text h1 {
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 70px;
+    letter-spacing: -2px;
+    font-family: 'kongtext', sans-serif;
+    /* font-family: 'ArcadeClassic', sans-serif; */
+}
+
+.fa-chevron-down {
+    font-size: 4rem;
+    color: #F147FF;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.main-content {
+    background-image: url('../images/pixelated-purple-background-dark-blur.jpg');
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+
+.section-header {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.section-title {
+    font-size: 35px;
+    font-family: 'kongtext', sans-serif;
+}
+
+.section-paragraph {
+    font-size: 20px;
+    margin: 20px 200px;
+}
+
+.services {
+    margin: 50px 150px;
+    /* padding: 5rem; */
+}
+.service {
+    display: flex;
+}
+
+.service-image {
+    width: 300px;
+    height: 250px;
+    border-radius: 50px;
+    margin: 2rem;
+    border: 1px solid #b03ddd;
+}
+
+.service-detail {
+    padding: 3rem;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.indicator-container {
+    display: flex;
+    justify-content: center;
+}
+
+.indicators {
+    font-family: 'kongtext', sans-serif;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    border: 1px solid #b03ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.6s ease;
+}
+
+.active, .indicators:hover {
+    background-color: #b03ddd;
+}
+
+.service-header {
+    font-family: 'kongtext', sans-serif;
+}
+
+.service-para {
+    margin-top: 20px;
+    width: 80%;
+}
+
+.service-even{
+    flex-direction: row-reverse;
+}
+
+.indicator {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #b03ddd;
+    text-align: center;
+    align-items: center;
+}
+
+indicator-separator {
+    width: 200px;
+}
+
+.teams-section {
+    margin: 50px 50px;
+}
+
+.team-member {
+    display: flex;
+    margin: 50px 100px;
+    width: 70%;
+}
+
+.team .indent {
+    margin-left: 20%;
+}
+
+.team-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.team-info {
+    margin: 20px 50px;
+}
+.team-info h3 {
+    font-size: 20px;
+    font-family: 'kongtext', sans-serif;
+}
+
+.team-info h3 .span-text {
+    font-size: 20px;
+    font-family: 'kongtext', sans-serif;
+    color: #F146FF;
+}
+
+
+.team-info p {
+    font-size: 18px;
+    /* margin-top: 20px; */
+}
+
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px ;
+}
+
+.contact-left{
+    margin-left: 5rem;
+}
+
+.contact-left h3{
+    font-family: 'kongtext', sans-serif;
+    font-size: 20px;
+    color: #F146FF;
+}
+
+.contact-left p {
+    margin-top: 20px;
+}
+
+.call-now {
+    border: 1px solid #F146FF;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.call-link {
+    text-decoration: none;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #ffffff;
+    font-size: 30px;
+    margin-right: 20px;
+    
+}
+
+.contact-right{
+    margin-right: 5rem;
+}
+
+
+.footer {
+    background-color: #1C012F;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer {
+    padding: 10px;
+}
+
+/* .right-footer {
+
+} */
+
+.right-footer ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+
+.copyright {
+    font-family: 'kongtext', sans-serif;
+    font-size: 12px;
+}
+
+.copyright .span-text {
+    font-family: 'kongtext', sans-serif;
+    font-size: 12px;
+    color: #F146FF;
+}
+
+.footer-list-item {
+    font-family: 'kongtext', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* dialog::backdrop {
+    background-color: rgba(0,0,0,0.5);
+} */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #F146FF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 20px;
+    background-color: #1C012F;
+    color: #F146FF;
+  }
+  
+  .modal-body {padding: 20px; overflow-y: scroll;  font-size: 12px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #1C012F;
+    color: white;
+  }
