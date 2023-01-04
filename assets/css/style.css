@@ -132,6 +132,10 @@
     padding-top: 100px;
 }
 
+.section-map {
+	text-align: center;
+}
+
 .section-title {
     font-size: 35px;
     font-family: 'kongtext', sans-serif;
@@ -261,7 +265,7 @@ indicator-separator {
 .contact {
     display: flex;
     justify-content: space-between;
-    padding: 100px ;
+    padding: 50px ;
 }
 
 .contact-left{
@@ -418,4 +422,8 @@ indicator-separator {
     padding: 2px 16px;
     background-color: #1C012F;
     color: white;
+  }
+  
+  .no-mobile{
+	 
   }
