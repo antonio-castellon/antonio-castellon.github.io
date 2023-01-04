@@ -222,8 +222,9 @@ indicator-separator {
 
 .team-member {
     display: flex;
-    margin: 50px 100px;
-    width: 70%;
+    margin: 50px 50px;
+    /* width: 70%; */
+	padding: 20px;
 }
 
 .team .indent {
