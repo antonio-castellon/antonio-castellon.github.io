@@ -78,7 +78,7 @@
     
     .hero-text p {
         font-size: 12px;
-        color: #D93FEC;
+        color: white; /*#D93FEC; */
         letter-spacing: 10px;
     }
 

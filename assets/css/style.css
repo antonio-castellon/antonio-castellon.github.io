@@ -98,7 +98,7 @@
 
 .hero-text p {
     font-size: 23px;
-    color: #D93FEC;
+    color: white; /*#D93FEC; */
     letter-spacing: 10px;
 }
 
@@ -227,7 +227,7 @@ indicator-separator {
 }
 
 .team .indent {
-    margin-left: 20%;
+    margin-left: 0; /% 20% */
 }
 
 .team-image img {
