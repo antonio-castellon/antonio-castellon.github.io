@@ -146,6 +146,10 @@
     margin: 20px 200px;
 }
 
+.section-header li {
+    font-size: 18px;
+}
+
 .services {
     margin: 50px 150px;
     /* padding: 5rem; */

@@ -92,6 +92,12 @@
         margin: 20px;
     }
     
+	
+.section-header li {
+    font-size: 16px;
+}
+
+
     .services {
         margin: 1rem;
         /* padding: 3rem; */
@@ -285,6 +291,11 @@
 	
   .no-mobile{
 	   display: none;
+  }
+  
+  .emphasys {
+	  font-weight:bold; 
+	  color:#F147FF;
   }
 
 }
