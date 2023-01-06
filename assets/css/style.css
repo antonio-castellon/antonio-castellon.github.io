@@ -427,3 +427,8 @@ indicator-separator {
   .no-mobile{
 	 
   }
+  
+  .emphasys {
+	  font-weight:bold; 
+	  color:#F147FF;
+  }
