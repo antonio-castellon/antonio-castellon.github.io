@@ -100,7 +100,7 @@
 
     .services {
         margin: 1rem;
-        /* padding: 3rem; */
+        padding: 1rem;
         text-align: center;
     }
     .service {
@@ -163,12 +163,12 @@
     }
 
     .team-info h3 {
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'kongtext', sans-serif;
     }
     
     .team-info h3 .span-text {
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'kongtext', sans-serif;
         color: #F146FF;
     }
