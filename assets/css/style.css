@@ -12,7 +12,7 @@
     margin: 0;
     font-family: 'courier', sans-serif;
 	align-items: center;
-
+	background: black;
 }
 
 /* .container {
@@ -420,7 +420,11 @@ indicator-separator {
     color: #F146FF;
   }
   
-  .modal-body {padding: 20px; overflow-y: scroll;  font-size: 12px;}
+  .modal-body {
+	  padding: 20px; 
+	  overflow-y: scroll;  
+	  font-size: 10dpx;
+  }
   
   .modal-footer {
     padding: 2px 16px;
