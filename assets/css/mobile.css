@@ -2,8 +2,11 @@
     
     *{
         margin: 0;
-		background: black;
+		
     }
+	.container {
+	background: black;
+} 
 
     .navbar {
         display: block;

@@ -12,12 +12,12 @@
     margin: 0;
     font-family: 'courier', sans-serif;
 	align-items: center;
-	background: black;
+	
 }
 
-/* .container {
-
-} */
+.container {
+	background: black;
+} 
 
 .navbar {
     display: flex;
