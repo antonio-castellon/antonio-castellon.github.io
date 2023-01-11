@@ -236,7 +236,8 @@ indicator-separator {
 }
 
 .team .indent {
-    margin-left: 0; /% 20% */
+    /* margin-left: 0; /% 20% */ 
+    flex-direction: row-reverse;
 }
 
 .team-image img {
