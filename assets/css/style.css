@@ -253,6 +253,11 @@ indicator-separator {
     font-size: 20px;
     font-family: 'kongtext', sans-serif;
 }
+.team-info a {
+    font-size: 20px;
+    font-family: 'kongtext', sans-serif;
+    color: white;
+}
 
 .team-info h3 .span-text {
     font-size: 20px;
