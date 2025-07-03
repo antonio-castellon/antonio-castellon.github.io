@@ -1,11 +1,15 @@
-@import url('../fonts/yoster.ttf');
 @font-face {
-    font-family: 'yoster';
-    src: url('../fonts/yoster.ttf');
+    font-family: 'Yoster';
+    url('../fonts/yoster.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
 }
+
 @font-face {
-    font-family: 'kongtext';
-    src: url('../fonts/kongtext.ttf');
+    font-family: 'Kongtext';
+    url('../fonts/kongtext.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
@@ -429,7 +433,7 @@ indicator-separator {
   .modal-body {
 	  padding: 20px; 
 	  overflow-y: scroll;  
-	  font-size: 10dpx;
+	  font-size: 10px;
   }
   
   .modal-footer {
