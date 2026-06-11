@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Team :: Case Study - CannaBorn (Aspeya)</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/animations/furgo_jumping.png" />
+    <link href="https://fonts.cdnfonts.com/css/courier?styles=20394,20397,20390,20383,20385" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link href="../assets/fonts/yoster.ttf" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobile.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/tablet.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/8350adaf94.js" crossorigin="anonymous"></script>
+    <style>
+        /* Minimal overrides to make case study pages feel native while standalone */
+        .case-hero { background: #49145E; padding: 60px 20px; text-align: center; }
+        .case-hero h1 { font-family: 'kongtext', sans-serif; color: #fff; font-size: 42px; letter-spacing: -1px; }
+        .case-content { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+        .case-section { margin-bottom: 40px; }
+        .case-section h2 { font-family: 'kongtext', sans-serif; color: #F147FF; font-size: 24px; margin-bottom: 12px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .data-table th, .data-table td { border: 1px solid #b03ddd; padding: 8px 12px; text-align: left; font-size: 15px; }
+        .data-table th { background: #1C012F; color: #F147FF; font-family: 'kongtext', sans-serif; }
+        .highlight { color: #F147FF; font-weight: bold; }
+        .back-link { display: inline-block; margin: 20px 0; color: #F147FF; font-family: 'kongtext', sans-serif; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+
+        /* Force white text for dark theme (matches main site .container / .main-content) */
+        body, .container, .case-content, .case-section, p, li, td, th {
+            color: #ffffff;
+        }
+        .data-table td {
+            color: #ffffff;
+        }
+
+        /* Tech stack pills - same as gabriel-erp.html for consistent fancy rendering */
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .tech-pill { background: #1C012F; border: 1px solid #b03ddd; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-family: 'kongtext', sans-serif; color: #F147FF; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar (duplicated from main site for static independence) -->
+        <nav class="navbar">
+            <div class="left-navbar">
+                <div style="display: flex;">
+                    <img width="40px" height="40px" src="../assets/animations/furgo_jumping.gif"> &nbsp;
+                    <div style="align-items: center;color: #ffffff; font-size: 18px; font-family: 'kongtext', sans-serif; margin-left: 5px;">
+                        A<sub style="font-size:10px; font-family: 'kongtext', sans-serif; color:#F147FF;">ntonio's</sub>-TEAM
+                    </div>
+                </div>
+            </div>
+            <div class="right-navbar">
+                <ul class="nav" id="nav">
+                    <a href="../index.html#home"><li class="nav-item">HOME</li></a>
+                    <a href="../index.html#services"><li class="nav-item">SERVICES</li></a>
+                    <a href="../index.html#case-studies"><li class="nav-item">CASE STUDIES</li></a>
+                    <a href="../index.html#contact"><li class="nav-item">CONTACT</li></a>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="case-hero">
+            <h1>CannaBorn</h1>
+            <p style="color:#ddd; font-size:18px;">Scientific Data Platform for Aspeya Switzerland SA • 2025</p>
+            <p style="color:#F147FF; font-family:'kongtext',sans-serif; margin-top:10px;">500 hours • Central research hub for chemical &amp; biological cannabis investigations</p>
+        </div>
+
+        <div class="case-content">
+            <a href="../index.html#case-studies" class="back-link">← Back to Case Studies</a>
+
+            <div class="case-section">
+                <h2>The Challenge</h2>
+                <p>Aspeya Switzerland SA needed a better way to manage their scientific investigation of new drugs in the chemical and biological Cannabis space. Researchers were working with fragmented data from internal experiments and external studies. Key information on aerosol and smoke chemistry, in silico tox results, constituent analysis, and stability data lived in disconnected sources, making it hard to get the full picture, share findings, or generate timely reports on new compounds, strains, and products.</p>
+                <p>A central, collaborative platform was required — one that could ingest heterogeneous datasets, support dynamic exploration, enable team collaboration with proper access controls, and integrate external knowledge bases.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Solution Architecture</h2>
+                <div class="tech-stack">
+                    <div class="tech-pill">ArangoDB</div>
+                    <div class="tech-pill">Node.js (Backend / API)</div>
+                    <div class="tech-pill">React.js (Frontend)</div>
+                    <div class="tech-pill">AWS (Cloud)</div>
+                    <div class="tech-pill">Graph Database</div>
+                    <div class="tech-pill">Real-time Sync</div>
+                </div>
+
+                <p><u>ArangoDB</u>: Multi-model graph database used as the core for storing complex scientific relationships between compounds, studies, stability data, and external references. Enables fast traversals and flexible schema for research data.</p>
+                <p><u>Node.js (Backend / API)</u>: Handles all server-side logic, REST/GraphQL APIs, data ingestion pipelines, and integration with external sources (ChEMBL, Labstat, etc.).</p>
+                <p><u>React.js (Frontend)</u>: Modern UI for the research dashboard, dynamic collections, advanced graphics, chat-like search, and collaboration baskets. Built for scientists with focus on usability and performance.</p>
+                <p><u>AWS (Cloud)</u>: Cloud infrastructure for hosting, scalable storage, and reliable deployment of the entire platform with high availability for R&amp;D teams.</p>
+                <p><u>Graph Database</u>: Core modeling for interconnected research entities (compounds, assays, publications, stability profiles) with powerful query capabilities.</p>
+                <p><u>Real-time Sync</u>: Live updates across the platform for new data, external imports, and collaborative changes visible to all authorized users instantly.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Delivery Approach (Phased &amp; Collaborative)</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>Q3 2025 (Core foundations)</strong> — Data ingestion for new datasets (stability, aerosol/smoke chemistry, constituent analysis), database and GUI adaptations, extension of dynamic collections, graphics improvements, reference splitting, and initial chat-like search.</div>
+                    <div class="timeline-item"><strong>Q4 2025 (Collaboration &amp; polish)</strong> — Basket improvements (private, public, semi-private), external data sources (ChEMBL, DSSTOX, aroma compounds), further UI/UX, support, bug fixes, and stakeholder meetings.</div>
+                    <div class="timeline-item"><strong>Overall</strong> — Agile delivery with regular meetings, documentation, and continuous support. Built on an existing prototype to turn it into a production-grade collaborative research tool.</div>
+                </div>
+                <p>Regular deliveries with defined milestones. Emphasis on usability for R&amp;D teams and scientific data integrity.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Investment Model</h2>
+                <ul style="font-size:16px; line-height:1.6; margin: 0 0 0 20px;">
+                    <li>Fixed-price development</li>
+                    <li><strong>Total:</strong> CHF 75,000 (at 150 CHF/hour). TVA 8.1% not included.</li>
+                    <li>Includes ongoing support and stakeholder meetings.</li>
+                    <li><strong>Total hours: 500</strong></li>
+                </ul>
+            </div>
+
+            <div class="case-section">
+                <h2>Status (2025)</h2>
+                <p>Both Q3 and Q4 phases completed. The CannaBorn platform is now in active use as the central hub for Aspeya’s cannabis-related chemical and biological research, supporting internal investigations and the integration of external studies.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Why It Matters</h2>
+                <p>This project showcases the A-Team’s strength in <span class="highlight">scientific data platforms and knowledge management</span>: turning scattered, complex research data into a unified, searchable, and collaborative environment. It directly supports deeper insights, faster reporting, and better cross-team collaboration in a highly specialized R&amp;D domain — exactly the kind of non-standard, high-impact work we thrive on.</p>
+            </div>
+
+            <a href="../index.html#contact" class="back-link" style="font-size:18px;">Have complex scientific data that needs a real platform? Let's talk →</a>
+        </div>
+    </div>
+</body>
+</html>

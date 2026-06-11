@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Team :: Case Study - Gabriel ERP Modernization</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/animations/furgo_jumping.png" />
+    <link href="https://fonts.cdnfonts.com/css/courier?styles=20394,20397,20390,20383,20385" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link href="../assets/fonts/yoster.ttf" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobile.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/tablet.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/8350adaf94.js" crossorigin="anonymous"></script>
+    <style>
+        .case-hero { background: #49145E; padding: 60px 20px; text-align: center; }
+        .case-hero h1 { font-family: 'kongtext', sans-serif; color: #fff; font-size: 42px; letter-spacing: -1px; }
+        .case-content { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+        .case-section { margin-bottom: 40px; }
+        .case-section h2 { font-family: 'kongtext', sans-serif; color: #F147FF; font-size: 24px; margin-bottom: 12px; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .tech-pill { background: #1C012F; border: 1px solid #b03ddd; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-family: 'kongtext', sans-serif; color: #F147FF; }
+        .highlight { color: #F147FF; font-weight: bold; }
+        .back-link { display: inline-block; margin: 20px 0; color: #F147FF; font-family: 'kongtext', sans-serif; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .timeline { border-left: 3px solid #b03ddd; padding-left: 20px; margin: 20px 0; }
+        .timeline-item { margin-bottom: 18px; }
+
+        /* Strong white text for dark theme (matches main site) */
+        body, .container, .case-content, .case-section,
+        p, li, td, th, div, span, table, ul {
+            color: #ffffff !important;
+        }
+        .tech-pill {
+            color: #F147FF !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar (duplicated for static independence) -->
+        <nav class="navbar">
+            <div class="left-navbar">
+                <div style="display: flex;">
+                    <img width="40px" height="40px" src="../assets/animations/furgo_jumping.gif"> &nbsp;
+                    <div style="align-items: center;color: #ffffff; font-size: 18px; font-family: 'kongtext', sans-serif; margin-left: 5px;">
+                        A<sub style="font-size:10px; font-family: 'kongtext', sans-serif; color:#F147FF;">ntonio's</sub>-TEAM
+                    </div>
+                </div>
+            </div>
+            <div class="right-navbar">
+                <ul class="nav" id="nav">
+                    <a href="../index.html#home"><li class="nav-item">HOME</li></a>
+                    <a href="../index.html#services"><li class="nav-item">SERVICES</li></a>
+                    <a href="../index.html#case-studies"><li class="nav-item">CASE STUDIES</li></a>
+                    <a href="../index.html#contact"><li class="nav-item">CONTACT</li></a>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="case-hero">
+            <h1>Legacy ERP → Modern</h1>
+            <p style="color:#ddd; font-size:18px;">Full-stack modernization for Gabriel Informatik • 2025–2026</p>
+            <p style="color:#F147FF; font-family:'kongtext',sans-serif; margin-top:10px;">T&amp;M • 80–160 h/month • PostgreSQL + Node.js + React</p>
+        </div>
+
+        <div class="case-content">
+            <a href="../index.html#case-studies" class="back-link">← Back to Case Studies</a>
+
+            <div class="case-section">
+                <h2>The Challenge</h2>
+                <p>Gabriel Informatik's client had a critical business ERP that managed all operations. The legacy application was based on outdated code that <span class="highlight">could no longer be compiled</span>. It used stored procedures in a non-optimized way to generate reports from the existing database and could not accommodate new requirements (including accessibility on tablets/mobiles for drivers and parents in their operations).</p>
+                <p>A quick prototype had been built to validate the direction. The client needed the real, production-grade solution.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Solution Architecture</h2>
+                <div class="tech-stack">
+                    <div class="tech-pill">PostgreSQL 17</div>
+                    <div class="tech-pill">Node.js (Backend / API)</div>
+                    <div class="tech-pill">React (Frontend)</div>
+                    <div class="tech-pill">JSON-native data</div>
+                    <div class="tech-pill">Mobile / Tablet ready</div>
+                </div>
+                <p><strong>Database:</strong> PostgreSQL 17 (current schema adapted, stored procedures only when truly needed). Excellent JSON support for future flexibility. No license costs. Secure handling of sensitive business information.</p>
+                <p><strong>Backend:</strong> Node.js web services acting as the bridge between frontend and database.</p>
+                <p><strong>Frontend:</strong> React static application, deployable via the same Node instance or separately. Designed for accessibility on tablets and mobiles.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Delivery Approach (Agile, Predictable)</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>Prototype validation</strong> → agreed architecture and stack.</div>
+                    <div class="timeline-item"><strong>Version 1.0</strong> — Replicate all existing functionality from the legacy system (including reporting features) plus any modifications that do not affect delivery timelines.</div>
+                    <div class="timeline-item"><strong>Version 2.0</strong> — All new features not covered in v1.0.</div>
+                    <div class="timeline-item"><strong>Ongoing</strong> — Meetings, documentation (developer + installation manuals), and continuous support.</div>
+                </div>
+                <p>At least one deliverable every 15 days (minimum ~20 hours/week). Invoices reflect exact hours spent. Frame agreement up to 2 years with option to extend.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Investment Model</h2>
+                <p><strong>Time &amp; Materials</strong> — 80 to 160 hours per month typical.</p>
+                <p><strong>Monthly range:</strong> CHF 12,000 – 24,000 (at 150 CHF/hour). TVA 8.1% not included.</p>
+                <p>Current rates are 150 CHF/hour. Flexible to client pace while guaranteeing steady progress.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Status (mid-2026)</h2>
+                <p>Prototype phase completed. Active development of v1.0 / continuing into v2.0 features. Regular invoicing and timesheets (example: 38 hours in one month for development + meetings + deployment).</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Why It Matters</h2>
+                <p>This project demonstrates the A-Team's strength in <span class="highlight">legacy rescue</span>: taking unmaintainable, business-critical systems and giving them a modern, future-proof foundation without losing a single existing capability — while adding the flexibility the client actually needs.</p>
+            </div>
+
+            <a href="../index.html#contact" class="back-link" style="font-size:18px;">Have a legacy system that "can't be touched"? Let's talk →</a>
+        </div>
+    </div>
+</body>
+</html>

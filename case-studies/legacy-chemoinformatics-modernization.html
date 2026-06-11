@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Team :: Case Study - Legacy Chemoinformatics Modernization</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/animations/furgo_jumping.png" />
+    <link href="https://fonts.cdnfonts.com/css/courier?styles=20394,20397,20390,20383,20385" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link href="../assets/fonts/yoster.ttf" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/mobile.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/tablet.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/8350adaf94.js" crossorigin="anonymous"></script>
+    <style>
+        .case-hero { background: #49145E; padding: 60px 20px; text-align: center; }
+        .case-hero h1 { font-family: 'kongtext', sans-serif; color: #fff; font-size: 42px; letter-spacing: -1px; }
+        .case-content { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+        .case-section { margin-bottom: 40px; }
+        .case-section h2 { font-family: 'kongtext', sans-serif; color: #F147FF; font-size: 24px; margin-bottom: 12px; }
+        .highlight { color: #F147FF; font-weight: bold; }
+        .back-link { display: inline-block; margin: 20px 0; color: #F147FF; font-family: 'kongtext', sans-serif; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .tech-pill { background: #1C012F; border: 1px solid #b03ddd; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-family: 'kongtext', sans-serif; color: #F147FF; }
+        body, .container, .case-content, .case-section, p, li, td, th, div, span { color: #ffffff !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="left-navbar">
+                <div style="display: flex;">
+                    <img width="40px" height="40px" src="../assets/animations/furgo_jumping.gif"> &nbsp;
+                    <div style="align-items: center;color: #ffffff; font-size: 18px; font-family: 'kongtext', sans-serif; margin-left: 5px;">
+                        A<sub style="font-size:10px; font-family: 'kongtext', sans-serif; color:#F147FF;">ntonio's</sub>-TEAM
+                    </div>
+                </div>
+            </div>
+            <div class="right-navbar">
+                <ul class="nav" id="nav">
+                    <a href="../index.html#home"><li class="nav-item">HOME</li></a>
+                    <a href="../index.html#services"><li class="nav-item">SERVICES</li></a>
+                    <a href="../index.html#case-studies"><li class="nav-item">CASE STUDIES</li></a>
+                    <a href="../index.html#contact"><li class="nav-item">CONTACT</li></a>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="case-hero">
+            <h1>Legacy Chemoinformatics Modernization</h1>
+            <p style="color:#ddd; font-size:18px;">Monolith → Microservices + Graph DB • ETL to AWS • PMI R&amp;D</p>
+            <p style="color:#F147FF; font-family:'kongtext',sans-serif; margin-top:10px;">Weeks → Hours • Two Excellence Awards • Distributed Systems</p>
+        </div>
+
+        <div class="case-content">
+            <a href="../index.html#case-studies" class="back-link">← Back to Case Studies</a>
+
+            <div class="case-section">
+                <h2>The Challenge</h2>
+                <p>A large monolithic chemoinformatics application had become a major bottleneck. Processing that should have taken hours was taking weeks. The codebase was impossible to maintain, data was locked in silos, and every new requirement required risky, time-consuming changes to the monolith. ETL processes were manual, fragile, and on-premise only.</p>
+                <p>The teams (Chemoinformatics and Bioinformatics) needed a modern, distributed, scalable platform that could handle complex chemical knowledge bases while dramatically reducing processing time and enabling cloud-native ETL pipelines.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Solution Architecture</h2>
+                <div class="tech-stack">
+                    <div class="tech-pill">Microservices Architecture</div>
+                    <div class="tech-pill">Graph Database (Neo4j)</div>
+                    <div class="tech-pill">ETL Pipelines</div>
+                    <div class="tech-pill">AWS Cloud</div>
+                    <div class="tech-pill">Distributed Systems</div>
+                    <div class="tech-pill">Legacy Modernization</div>
+                </div>
+                <p><strong>Microservices Architecture:</strong> Decomposed the monolith into independent, deployable services for data ingestion, processing, knowledge management, and APIs. Dramatically improved maintainability and deployment speed.</p>
+                <p><strong>Graph Database:</strong> Pioneered adoption of graph databases (e.g. Neo4j) for chemical knowledge-base platforms. Enabled powerful relationship queries across compounds, reactions, assays, and literature that were impossible in the old relational model.</p>
+                <p><strong>ETL Pipelines + AWS:</strong> Replaced manual on-premise ETL with robust, scalable cloud-native pipelines (SDI-to-AWS and similar). Data unification across heterogeneous sources with reliable scheduling and monitoring.</p>
+                <p><strong>Distributed Systems:</strong> Built for scale and resilience — services communicate via well-defined APIs, with clear boundaries and independent scaling.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Delivery Approach (Phased Modernization)</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>Architecture &amp; Proof of Concept</strong> → Defined target microservices architecture and graph DB model. Built small proof-of-concept showing weeks-to-hours processing improvement.</div>
+                    <div class="timeline-item"><strong>Core Migration (Monolith → Microservices)</strong> — Gradually extracted key domains (data ingestion, processing, knowledge base) into independent services while keeping the system running.</div>
+                    <div class="timeline-item"><strong>Graph DB &amp; Knowledge Layer</strong> — Migrated critical chemical knowledge relationships into the graph database. Enabled new types of queries and cross-domain insights.</div>
+                    <div class="timeline-item"><strong>ETL to Cloud + Distributed Ops</strong> — Built and deployed scalable ETL pipelines on AWS. Established proper distributed systems practices, monitoring, and CI/CD.</div>
+                    <div class="timeline-item"><strong>Ongoing</strong> — Continuous support, further service extraction, and knowledge transfer to internal teams.</div>
+                </div>
+                <p>Phased, low-risk migration strategy. Always delivered value incrementally while modernizing the core platform.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Investment Model</h2>
+                <ul style="font-size:16px; line-height:1.6; margin: 0 0 0 20px;">
+                    <li>Multi-phase project (architecture, migration, graph layer, cloud ETL)</li>
+                    <li>Single senior architect/developer leading, with A-Team support on specific streams when needed</li>
+                    <li>Focus on incremental value delivery with minimal business disruption</li>
+                    <li><strong>Total hours: Multi-quarter effort (exact figures in project records)</strong></li>
+                </ul>
+            </div>
+
+            <div class="case-section">
+                <h2>Status</h2>
+                <p>Core modernization completed and in production. Processing time reduced from weeks to hours. Graph database approach adopted for chemical knowledge bases. ETL pipelines running reliably in AWS. Two Excellence Awards received from Philip Morris International R&amp;D for this body of work. Multiple systems still in daily use across Chemoinformatics and Bioinformatics teams.</p>
+            </div>
+
+            <div class="case-section">
+                <h2>Why It Matters</h2>
+                <p>This is pure "Legacy Rescue" gold. We took a critical, unmaintainable monolithic system that was actively slowing down R&amp;D and transformed it into a modern, distributed, cloud-native platform with graph-based knowledge management and robust ETL. The quantifiable impact (weeks → hours) plus the two Excellence Awards prove that deep architectural modernization, when done right, delivers massive business value.</p>
+                <p>It also demonstrates the A-Team's core strength: senior architects who can lead complex distributed systems work end-to-end — from monolith decomposition and graph modeling all the way to production ETL on AWS — while mentoring teams and keeping the lights on during the transition.</p>
+            </div>
+
+            <a href="../index.html#contact" class="back-link" style="font-size:18px;">Stuck with a legacy monolith that's killing your velocity? Let's rescue it →</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name=”robots” content="index, follow">
 	<meta name="description" content="We are a non Standard Consultant Team, specialized in Software Development, Communications and Security, Drug Discovery"/>
@@ -16,11 +15,13 @@
     <link href="https://fonts.cdnfonts.com/css/courier?styles=20394,20397,20390,20383,20385" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
     <link href="assets/fonts/yoster.ttf" rel="stylesheet" />
+    <!-- <link href="assets/fonts/courier.ttf" rel="stylesheet" /> -->
 
     <!-- custom stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/mobile.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/tablet.css" rel="stylesheet" type="text/css" />
+	
+    <link href="assets/css/tablet.css" rel="stylesheet" type="text/css" />
 
     <script src="https://kit.fontawesome.com/8350adaf94.js" crossorigin="anonymous"></script>
 </head>
@@ -42,6 +43,7 @@
                 <ul class="nav" id="nav">
                     <a href="#home"><li class="nav-item">HOME</li></a>
                     <a href="#services"><li class="nav-item">SERVICES</li></a>
+                    <a href="#case-studies"><li class="nav-item">CASE STUDIES</li></a>
                     <a href="#achievements"><li class="nav-item">ACHIEVEMENTS</li></a>
                     <a href="#team"><li class="nav-item">TEAM</li></a>
 					<a href="#contact"><li class="nav-item">CONTACT</li></a>
@@ -173,6 +175,64 @@
                         </div>
                     </div>
                   
+                </div>
+            </section>
+
+            <!-- CASE STUDIES SECTION - Introduced via Grok integration -->
+            <section class="services-section" id="case-studies">
+                <div class="section-header">
+                    <h2 class="section-title">Case Studies</h2>
+                    <p class="section-paragraph">
+                        <b>Concrete deliveries.</b> Non-standard problems solved with measurable impact.<br/>
+                        Two recent examples of turning complex or legacy situations into production platforms.
+                    </p>
+                </div>
+
+                <div class="services">
+                    <!-- CannaBorn Card -->
+                    <div class="service">
+                        <img src="assets/images/case-studies/cannaborn.jpg" alt="CannaBorn Data Platform" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <div class="service-detail">
+                            <h3 class="service-header">CannaBorn<br/>Scientific Data Platform</h3>
+                            <p class="service-para">
+                                Central hub for Aspeya's chemical &amp; biological cannabis research.<br/>
+                                Integrated aerosol chemistry, stability, tox, and external sources (ChEMBL etc.).<br/>
+                                <span class="emphasys">Dynamic collections, collaboration baskets, chat-like search, advanced graphics.</span><br/>
+                                <i>500 hours • 2025 • Aspeya Switzerland SA</i>
+                            </p>
+                            <a href="case-studies/cannaborn.html" style="color:#F147FF; font-family:'kongtext',sans-serif; text-decoration:none; font-size:13px;">View full case study →</a>
+                        </div>
+                    </div>
+
+                    <!-- Gabriel Card -->
+                    <div class="service service-even">
+                        <img src="assets/images/case-studies/gabriel-erp.jpg" alt="Gabriel ERP Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <div class="service-detail">
+                            <h3 class="service-header">Legacy ERP<br/>to Modern Stack</h3>
+                            <p class="service-para">
+                                Unmaintainable legacy business ERP (couldn't even compile).<br/>
+                                Full re-architecture: PostgreSQL 17 + Node.js API + React (mobile capable).<br/>
+                                <span class="emphasys">Preserved every existing feature while adding new ones. Agile, bi-weekly deliveries.</span><br/>
+                                <i>Ongoing T&amp;M • 2025–2026 • Gabriel Informatik (Liestal)</i>
+                            </p>
+                            <a href="case-studies/gabriel-erp.html" style="color:#F147FF; font-family:'kongtext',sans-serif; text-decoration:none; font-size:13px;">View full case study →</a>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Chemoinformatics Modernization Card -->
+                    <div class="service">
+                        <img src="assets/images/case-studies/legacy-chemoinformatics.jpg" alt="Legacy Chemoinformatics Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <div class="service-detail">
+                            <h3 class="service-header">Monolith → Microservices<br/>+ Graph DB</h3>
+                            <p class="service-para">
+                                Critical chemoinformatics monolith migrated to microservices and graph database.<br/>
+                                Processing time reduced from weeks to hours. ETL to AWS, distributed systems.<br/>
+                                <span class="emphasys">Two Excellence Awards • Still in daily use</span><br/>
+                                <i>PMI R&amp;D</i>
+                            </p>
+                            <a href="case-studies/legacy-chemoinformatics-modernization.html" style="color:#F147FF; font-family:'kongtext',sans-serif; text-decoration:none; font-size:13px;">View full case study →</a>
+                        </div>
+                    </div>
                 </div>
             </section>
     
@@ -313,7 +373,7 @@
                 </div>
             </section>
 			
-			<section class="teams-section" id="cameo">
+			<section class="teams-section" id="team">
                 <div class="section-header">
                     <h2 class="section-title">Cameo</h2>
                     <p class="section-paragraph">
