@@ -11,11 +11,10 @@
 	<meta name="copyright" content="Copyright owner" />
 	<title>A-Team :: Antonio's Team :: A non-Standard Consultant Team</title>
 	<link rel="shortcut icon" type="image/png" href="/assets/animations/furgo_jumping.png" />
-    <!-- font -->
-    <link href="https://fonts.cdnfonts.com/css/courier?styles=20394,20397,20390,20383,20385" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
-    <!-- Local TTF fonts are defined in assets/css/style.css via @font-face.
-         They only load reliably when served (not file://). See note below. -->
+    <!-- Local fonts are now self-hosted (see assets/css/style.css).
+         Removed external CDN links (courier, arcade-classic) because they were causing
+         console errors on the live site (CORS / loading failures for 'courier').
+         All fonts (courier, yoster, kongtext) are now loaded locally with font-display: swap. -->
 
     <!-- 
       LOCAL DEVELOPMENT TIP:
