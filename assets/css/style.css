@@ -6,18 +6,24 @@
 */
 @font-face {
     font-family: 'yoster';
-    src: url('../fonts/yoster.ttf');
+    src: url('/assets/fonts/yoster.ttf');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'kongtext';
-    src: url('../fonts/kongtext.ttf');
+    src: url('/assets/fonts/kongtext.ttf');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'courier';
-    src: url('../fonts/courier.ttf');
+    src: url('/assets/fonts/courier.ttf');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
