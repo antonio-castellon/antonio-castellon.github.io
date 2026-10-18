@@ -13,43 +13,89 @@
 </head>
 <body>
   <h1>Privacy Policy for Oigo</h1>
-  <p><strong>Last updated:</strong> 13 October 2026</p>
+  <p><strong>Effective date:</strong> 18 October 2026</p>
 
-  <p>This Privacy Policy explains how Oigo (“we”, “us”, or “the App”) handles information. Oigo is an accessibility interface that connects to Grok to help blind and visually impaired users interact with the service through voice or other accessible means.</p>
+  <p>This Privacy Policy explains how the Android app Oigo (package <code>ch.castellon.oigo</code>, “the App”) handles information. The App is developed by Antonio Castellon (Castellon.CH), “we” or “us”.</p>
 
-  <p><strong>We do not collect, store, or process any personal or device data from users of Oigo.</strong></p>
+  <p>Oigo is a hands-free voice assistant for the phone. It is made so that an older person only has to press one large Listen button, then ask or tell something by speaking. Answers come from Grok, the AI service of xAI, and are spoken aloud. Oigo is an independent app. It is not made, endorsed, or sponsored by xAI.</p>
 
-  <h2>1. Information We Collect</h2>
-  <p>Oigo does not collect any personal information, usage data, device identifiers, location data, or any other user or device information.<br>
-  The App acts only as an interface to Grok. Any interaction with Grok is handled directly by Grok’s own services and is subject to Grok’s privacy policy.</p>
+  <p><strong>In short:</strong> we do not run a server for Oigo and we do not receive your conversations. The App keeps its data on your phone. To answer you, it sends what you ask, plus some context described below, directly from your phone to xAI under your own xAI account. It shows no ads and contains no analytics or tracking.</p>
 
-  <h2>2. How We Use Information</h2>
-  <p>Because we collect no user data, we do not use any personal information for any purpose.</p>
+  <h2>1. Data processed on your device</h2>
+  <ul>
+    <li><strong>Wake phrase.</strong> While listening is on, microphone audio is analysed on the phone by a built-in keyword spotter to detect the wake phrase (for example “hola grok”). The App does not save this audio and does not send it anywhere.</li>
+    <li><strong>Conversation context.</strong> The App stores the most recent lines of the conversation and a short summary of earlier lines in its private storage on the phone. This context is deleted automatically after the number of hours chosen in settings (1 to 24 hours, 12 by default). Saying “grok, forget” deletes it at once.</li>
+    <li><strong>Notes and alarms.</strong> Notes and alarms you confirm by voice are stored in the App's private storage on the phone until you delete them (for example “grok, forget the notes” or “grok, cancel the alarms”).</li>
+    <li><strong>Settings.</strong> Your choices (language, wake phrase, name, voice volume, timings, which optional features are on, and the Grok model name) are stored in the App's private storage.</li>
+    <li><strong>Sign-in credentials.</strong> Your xAI API key, or the tokens from the optional SuperGrok sign-in, are stored in encrypted storage on the phone (see “Security”).</li>
+    <li><strong>Technical event log and install ID.</strong> The App keeps a short log of its last 100 technical events (for example “listening started” or an error code) and a random install ID. These are only used if you choose to send a debug report (section 6). Long numbers and API keys are masked in the log. Words you said appear only when they are command words such as “yes”, “no” or “call”; any other word is replaced by “other”.</li>
+    <li><strong>Contacts (optional).</strong> If you turn on calls or WhatsApp in settings and allow access to contacts, the App searches your contacts on the phone to find the number for the name you said. Your contact list is not uploaded.</li>
+    <li><strong>Message notifications (optional).</strong> If you turn on WhatsApp or Telegram reading and grant notification access, the App reads the sender and text of new WhatsApp and Telegram notifications. It keeps them in memory only (not saved to storage). It reads a message aloud only after you say “yes”. Message text is not sent to xAI.</li>
+    <li><strong>Calls and WhatsApp drafts.</strong> When you ask the App to call someone, it passes the number to your phone's calling function. When you ask it to send a WhatsApp message, it opens WhatsApp (or a wa.me link) with the number and your text as a draft.</li>
+  </ul>
 
-  <h2>3. How We Share Information</h2>
-  <p>We do not collect any information and therefore do not share any user data with third parties.</p>
+  <h2>2. Data sent to xAI</h2>
+  <p>To answer you, the App connects directly from your phone to xAI's API (<code>https://api.x.ai/v1/responses</code>) over HTTPS. We do not see this traffic. A request is sent only when you say a phrase that starts with the App's name (by default “grok”). Phrases not addressed to the App, and commands the App handles itself (yes/no, notes, alarms, calls, forget), are not sent. Each request contains:</p>
+  <ul>
+    <li>the text of what you asked, as transcribed by the device's speech service (section 3);</li>
+    <li>the recent conversation lines and the short summary of earlier lines from the same day (section 1);</li>
+    <li><strong>all notes and alarms saved in Oigo (their text and time)</strong>, so that Grok can take them into account;</li>
+    <li>instructions for the answer, such as the language to answer in, and the selected Grok model name (default “grok-4.3”, which you can change in settings);</li>
+    <li>for questions about facts, news, weather and similar topics, a request that xAI run its web search (and sometimes X search) tools to answer.</li>
+  </ul>
+  <p>The App asks xAI not to store the response for later retrieval (<code>store: false</code>). Requests are authenticated with <strong>your own</strong> xAI API key (from <a href="https://console.x.ai">console.x.ai</a>) or, if you choose the optional “Sign in with SuperGrok”, with tokens issued to you by xAI. Usage is billed to your xAI account. As with any internet connection, xAI can see your IP address.</p>
+  <p><strong>Optional SuperGrok sign-in.</strong> If you choose it, the App asks xAI's sign-in service (<code>auth.x.ai</code>) for a one-time code and opens xAI's page in your browser so you can approve it there. The App never sees your password. It receives an access token and a refresh token, stores them encrypted on the phone, and uses them only to talk to xAI. This is an unofficial sign-in method that xAI may change or stop at any time.</p>
+  <p>How xAI processes, uses, and retains this data is governed by xAI's own terms and privacy policy, not by us: <a href="https://x.ai/legal/privacy-policy">https://x.ai/legal/privacy-policy</a>. xAI may process data outside your country.</p>
 
-  <h2>4. Data Retention</h2>
-  <p>No user data is retained by Oigo.</p>
+  <h2>3. Speech recognition and spoken answers</h2>
+  <p>After the wake phrase, Oigo uses the phone's built-in speech recognition service (Android's standard speech recognizer) to turn your speech into text. That service, not Oigo, receives the audio. Oigo only receives the resulting text and does not record or store audio. On many Android phones this service is provided by Google, which may process audio on its servers under Google's privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>. Which service is used depends on your phone and its settings.</p>
+  <p>Answers, and messages you agreed to hear, are read aloud by the phone's text-to-speech engine. Oigo passes the text to that engine.</p>
 
-  <h2>5. Your Rights</h2>
-  <p>Since we do not collect personal data, there is no personal data for you to access, correct, or delete through the App.<br>
-  If you have questions about data processed by Grok itself, please refer to Grok’s privacy policy.</p>
+  <h2>4. Other connections</h2>
+  <p>The first time listening starts, the App downloads the wake-phrase model from GitHub (<code>github.com</code>, sherpa-onnx project) over HTTPS. No personal data is sent with this download, but GitHub can see your IP address.</p>
 
-  <h2>6. Children’s Privacy</h2>
-  <p>Oigo is not directed at children and does not collect any data from anyone, including children.</p>
+  <h2>5. Permissions and why they are used</h2>
+  <ul>
+    <li><strong>Microphone</strong>: to hear the wake phrase and your requests.</li>
+    <li><strong>Internet</strong>: to reach xAI and to download the wake-phrase model.</li>
+    <li><strong>Notifications</strong> and <strong>foreground services</strong>: to show that listening is on, and to speak warnings, reminders, and message notices.</li>
+    <li><strong>Alarms and reminders</strong> and <strong>start at boot</strong>: to deliver reminders and the warning that listening has stopped.</li>
+    <li><strong>Ignore battery optimisation</strong> (if you allow it): so that the phone does not stop listening as soon as the screen turns off.</li>
+    <li><strong>Contacts</strong> and <strong>phone calls</strong> (optional): to call or message someone you name by voice.</li>
+    <li><strong>Notification access</strong> (optional): to announce and read WhatsApp and Telegram messages after you say “yes”.</li>
+  </ul>
 
-  <h2>7. Security</h2>
-  <p>No user data is collected or stored by the App.</p>
+  <h2>6. Optional debug report</h2>
+  <p>In settings you can choose to send a debug report. The App then opens an email draft to antonio@castellon.ch in your email app. Nothing is sent unless you send that email yourself. The report contains: the random install ID, App version, Android version, device manufacturer and model, language and wake-phrase settings, whether listening and a conversation are active, which optional features are on, voice volume and timing settings, the model name, whether a key is present (not the key itself), whether the App's permissions are granted, and the technical event log described in section 1. It does not include your key, message text, phone numbers, or contact names. We use reports only to fix problems. We delete them on request.</p>
 
-  <h2>8. International Transfers</h2>
-  <p>No user data is transferred by Oigo.</p>
+  <h2>7. What we do not do</h2>
+  <ul>
+    <li>No ads, no analytics, no tracking, no third-party SDKs that collect data.</li>
+    <li>We do not sell your data.</li>
+    <li>We do not share your data with anyone other than as described above (xAI for answers, the device's speech and text-to-speech services, and apps you ask Oigo to use, such as the phone dialer or WhatsApp).</li>
+    <li>We do not run a server for Oigo and do not receive your conversations, notes, contacts, or messages.</li>
+  </ul>
 
-  <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy if the App’s functionality changes. The “Last updated” date will be revised. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+  <h2>8. Security</h2>
+  <p>All network connections made by the App use HTTPS (encrypted in transit). The API key and sign-in tokens are stored with Android's encrypted storage (AES-256, with the key held in the Android Keystore). On the rare devices where that encrypted storage cannot be opened, the App falls back to its normal private storage. The App's data is excluded from Android backup (backup is turned off for this app).</p>
 
-  <h2>10. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy:<br>
+  <h2>9. Retention and deletion</h2>
+  <ul>
+    <li>Conversation context: deleted automatically after the hours set in settings (1–24, default 12), or at once with “grok, forget”.</li>
+    <li>Notes and alarms: kept until you delete them by voice.</li>
+    <li>All App data on the phone (settings, key, tokens, notes, alarms, context, log): deleted when you uninstall the App or clear its storage in Android settings (Settings › Apps › Oigo › Storage › Clear storage).</li>
+    <li>Data sent to xAI: retention is governed by xAI (see section 2). You can manage it through your xAI account.</li>
+    <li>Debug reports you emailed to us: you can ask us to delete them at antonio@castellon.ch.</li>
+  </ul>
+
+  <h2>10. Children</h2>
+  <p>Oigo is not directed at children under 13, and we do not knowingly collect data from children.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We will update this policy when the App's data handling changes and revise the effective date above.</p>
+
+  <h2>12. Contact</h2>
+  <p>Castellon.CH, Antonio Castellon<br>
   Email: <a href="mailto:antonio@castellon.ch">antonio@castellon.ch</a><br>
   Website: <a href="https://www.castellon.ch">https://www.castellon.ch</a><br>
   Address: Zaunweg 5, 2502 Biel/Bienne, Switzerland</p>
