@@ -79,7 +79,7 @@
   <h2>8. Security</h2>
   <p>All network connections made by the App use HTTPS (encrypted in transit). The API key and sign-in tokens are stored with Android's encrypted storage (AES-256, with the key held in the Android Keystore). On the rare devices where that encrypted storage cannot be opened, the App falls back to its normal private storage. The App's data is excluded from Android backup (backup is turned off for this app).</p>
 
-  <h2>9. Retention and deletion</h2>
+  <h2 id="deletion">9. Retention and deletion</h2>
   <ul>
     <li>Conversation context: deleted automatically after the hours set in settings (1–24, default 12), or at once with “grok, forget”.</li>
     <li>Notes and alarms: kept until you delete them by voice.</li>
