@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="mcp-glp-audit-proxy: a control layer between AI agents and lab systems, with a tamper-evident audit trail. Designed to support GLP / 21 CFR Part 11 / EU GMP Annex 11 workflows.">
+<meta name="author" content="Antonio Castellon">
+<title>mcp-glp-audit-proxy :: A-Team :: Antonio Castellon</title>
+<link rel="shortcut icon" type="image/png" href="/assets/animations/furgo_jumping.png" />
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+<style>
+@font-face{font-family:'kongtext';src:url('/assets/fonts/kongtext.ttf');font-display:swap}
+@font-face{font-family:'courier';src:url('/assets/fonts/courier.ttf');font-display:swap}
+body{margin:0;background:#000;color:#fff;font-family:'courier',monospace}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:10px 3rem;background:#1C012F;position:sticky;top:0;z-index:9}
+.navbar a{color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px;padding:0 1rem}
+.navbar a:hover{color:#F147FF}
+.brand{border:1px solid #fff;padding:10px}
+.hero{background:#49145E;padding:110px 2rem 90px;text-align:center}
+.hero p.kicker{letter-spacing:8px;font-size:18px}
+.hero h1{font-family:'kongtext',sans-serif;font-size:42px;margin:20px 0}
+.hero .lead{max-width:780px;margin:0 auto;font-size:19px;line-height:1.6}
+section{max-width:1000px;margin:0 auto;padding:70px 2rem}
+h2{font-family:'kongtext',sans-serif;font-size:22px;text-align:center;margin-bottom:30px}
+.em{color:#F147FF}
+.steps{display:flex;gap:20px;flex-wrap:wrap}
+.step{flex:1 1 260px;border:1px solid #b03ddd;padding:20px;line-height:1.5}
+.step h3{font-family:'kongtext',sans-serif;font-size:14px;color:#F147FF}
+table{width:100%;border-collapse:collapse;line-height:1.4}
+th,td{border:1px solid #b03ddd;padding:10px;text-align:left;vertical-align:top}
+th{background:#1C012F;font-family:'kongtext',sans-serif;font-size:12px}
+ul{line-height:1.7}
+.btn{display:inline-block;margin:10px;padding:14px 22px;border:2px solid #F147FF;color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px}
+.btn:hover{background:#F147FF;color:#000}
+.cta{text-align:center;background:#1C012F}
+form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+input,textarea,select{font-family:'courier',monospace;font-size:16px;padding:10px;background:#000;color:#fff;border:1px solid #b03ddd}
+button{cursor:pointer;background:transparent}
+.disclaimer{font-size:13px;color:#ccc;text-align:center;padding:30px 2rem;border-top:1px solid #333}
+code{color:#F147FF}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="/">A-TEAM</a>
+  <div><a href="#how">How</a><a href="#compare">Editions</a><a href="#validation">Validation</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero">
+  <p class="kicker">MCP-GLP-AUDIT-PROXY</p>
+  <h1>Your AI agents touch lab systems.<br><span class="em">Who keeps the audit trail?</span></h1>
+  <p class="lead">AI agents can now read and write in the tools your lab already owns. Without a record of who did what, when, and through which AI tool, that is a data-integrity gap.
+  mcp-glp-audit-proxy is the <span class="em">control layer</span> between the AI brain and your tools: every tool call is checked, optionally approved, and logged in a tamper-evident chain.</p>
+  <p><a class="btn" href="#contact">Request a demo</a><a class="btn" href="#contact">Start a pilot</a></p>
+  <p><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a></p>
+</header>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p style="text-align:center">AI brain &rarr; <span class="em">control layer</span> &rarr; tools you already own</p><br>
+  <div class="steps">
+    <div class="step"><h3>1. Intercept</h3><p>The proxy sits between your MCP client (the AI agent) and your MCP servers. Every tool call passes through it.</p></div>
+    <div class="step"><h3>2. Control</h3><p>An allow/denylist decides what may run. Write operations can require human approval (<code>glp_approve</code>). If something is wrong, it fails closed: the call is blocked, not let through.</p></div>
+    <div class="step"><h3>3. Record &amp; verify</h3><p>Each call is appended to a JSONL hash chain (RFC 8785 canonical JSON + SHA-256). The verify CLI detects any tampering, and <code>--print-head</code> lets you anchor the chain head externally.</p></div>
+  </div>
+</section>
+
+<section id="compare">
+  <h2>Community vs Pro</h2>
+  <table>
+    <tr><th>Capability</th><th>Community (MIT, free)</th><th>Pro / Enterprise</th></tr>
+    <tr><td>MCP proxy, allow/denylist, fail-closed</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Optional human approval for writes</td><td>Yes (glp_approve)</td><td>Yes, plus Part 11 e-signatures</td></tr>
+    <tr><td>Audit storage</td><td>Tamper-evident JSONL hash chain</td><td>+ SQL / S3 WORM backends</td></tr>
+    <tr><td>Integrity proofs</td><td>SHA-256 chain, verify CLI, --print-head</td><td>+ Ed25519 signing, RFC 3161 timestamps</td></tr>
+    <tr><td>Reports</td><td>RTM + sample OQ report</td><td>+ PDF/CSV reports, IQ/OQ pack</td></tr>
+    <tr><td>Identity</td><td>&mdash;</td><td>SSO</td></tr>
+    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a></td><td>Directly: <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></td></tr>
+  </table>
+</section>
+
+<section id="validation">
+  <h2>Validation pack</h2>
+  <ul>
+    <li><span class="em">RTM</span>: a requirements traceability matrix mapping requirements to tests (91 automated tests in Community).</li>
+    <li><span class="em">Sample OQ report</span>: a starting point for your own operational qualification.</li>
+    <li><span class="em">verify CLI</span>: re-checks the whole hash chain; <code>--print-head</code> prints the chain head for external anchoring.</li>
+    <li><span class="em">Pro: IQ/OQ pack</span>: installation and operational qualification documentation, plus PDF/CSV reports.</li>
+  </ul>
+  <p>These materials support your CSV process; your organisation remains responsible for validating its own use.</p>
+</section>
+
+<section class="cta">
+  <h2>See it on your stack</h2>
+  <p>A short demo, or a pilot on one workflow with the tools you already own.</p>
+  <a class="btn" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20demo%20request">Request a demo</a>
+  <a class="btn" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20pilot%20request">Request a pilot</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <form action="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20enquiry" method="post" enctype="text/plain">
+    <input name="name" placeholder="Name" required>
+    <input name="company" placeholder="Company">
+    <input name="email" type="email" placeholder="Email" required>
+    <select name="interest"><option>Demo</option><option>Pilot</option><option>Pro / Enterprise</option><option>Other</option></select>
+    <textarea name="message" rows="5" placeholder="Your lab systems and use case"></textarea>
+    <button class="btn" type="submit">Send via email</button>
+  </form>
+</section>
+
+<p class="disclaimer">mcp-glp-audit-proxy is designed to support GLP / 21 CFR Part 11 / EU GMP Annex 11 workflows. It does not by itself make a system compliant; validation of each use remains the responsibility of the user organisation.<br>&copy; Antonio Castellon &middot; <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
+</body>
+</html>
