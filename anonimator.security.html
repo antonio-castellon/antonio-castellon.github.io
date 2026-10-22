@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Policy – Anonimator</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 2rem auto; padding: 0 1rem; color: #222; background: #fff; }
+    h1 { color: #1C012F; }
+    h2 { color: #1C012F; margin-top: 1.8rem; }
+    a { color: #F147FF; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+  </style>
+</head>
+<body>
+  <h1>Security Policy for Anonimator</h1>
+  <p><strong>Effective date:</strong> 22 October 2026</p>
+
+  <p>This policy explains how to report security vulnerabilities in Anonimator and how we handle them. Anonimator is developed by Antonio Castellon (Castellon.CH), “we” or “us”.</p>
+
+  <p>Anonimator is a local pseudonymisation layer for using external AI services with documents that contain personal data. It replaces identifiers with tokens before text leaves your premises and keeps the key needed to restore them (the vault) encrypted and under your control. The result is pseudonymised, not anonymous: it is still personal data. Anonimator is in pre-release and offered for pilots.</p>
+
+  <p>This policy is designed to support the vulnerability-handling obligations of the EU Cyber Resilience Act (Regulation (EU) 2024/2847, Annex I, Part II). It is not a certification or a declaration of conformity.</p>
+
+  <h2>1. How to report a vulnerability</h2>
+  <ul>
+    <li>Email <a href="mailto:antonio@castellon.ch?subject=%5BSECURITY%5D%20anonimator">antonio@castellon.ch</a> with the subject <code>[SECURITY] anonimator</code>.</li>
+    <li>Do not open public issues, pull requests or discussions about the vulnerability.</li>
+    <li>If you can, include: affected version or commit, a description, steps to reproduce, the impact you expect, and whether anyone else knows about it.</li>
+    <li><strong>Do not send real personal data</strong> (documents, names, vault contents). Use synthetic data.</li>
+    <li>Encryption: we do not publish a PGP key yet. If you need an encrypted channel, ask for one in a first message without details.</li>
+  </ul>
+  <p>Languages: Spanish, English, German or French.</p>
+
+  <h2>2. Target response times</h2>
+  <p>These are targets, not contractual guarantees. Business days are Swiss business days.</p>
+  <table>
+    <tr><th>Step</th><th>Target</th></tr>
+    <tr><td>Acknowledgement</td><td>3 business days</td></tr>
+    <tr><td>Initial triage (confirmation, CVSS severity, scope)</td><td>10 business days</td></tr>
+    <tr><td>Fix or mitigation, critical/high severity</td><td>30 days from confirmation</td></tr>
+    <tr><td>Fix, medium/low severity</td><td>90 days from confirmation</td></tr>
+    <tr><td>Coordinated public disclosure</td><td>when the fix is released, or after 90 days unless we agree another date</td></tr>
+  </table>
+  <p>We keep you informed and, if you wish, credit you in the security advisory.</p>
+  <p>Actively exploited vulnerabilities and severe incidents affecting the security of the product are notified to ENISA / the national CSIRT through the CRA single reporting platform (early warning within 24 hours, notification within 72 hours, final report) when that obligation applies.</p>
+
+  <h2>3. Supported versions</h2>
+  <p>We use <a href="https://semver.org/">Semantic Versioning</a>. While Anonimator is in 0.x (before the first client), only the latest 0.x minor version receives security fixes. From 1.0, each major version receives security updates for <strong>5 years</strong> from its release.</p>
+  <table>
+    <tr><th>Version</th><th>Security support</th></tr>
+    <tr><td>0.x (latest minor)</td><td>Yes</td></tr>
+    <tr><td>Earlier 0.x</td><td>No: update to the latest</td></tr>
+    <tr><td>1.0 and later</td><td>5 years per major version from its release</td></tr>
+  </table>
+
+  <h2>4. Scope</h2>
+  <p><strong>In scope:</strong></p>
+  <ul>
+    <li>Anonimator software: detection, pseudonymisation, vault, leak check before sending, identity resolution and the evidence pack.</li>
+    <li>The pinned models and dependencies (hashes) we ship, and our signed release artefacts.</li>
+    <li>In particular: personal data leaking in outgoing text, re-identification without the vault, linking tokens across queries, personal values in logs or reports, and failures to stop on error (fail closed).</li>
+  </ul>
+  <p><strong>Out of scope:</strong></p>
+  <ul>
+    <li>Already published vulnerabilities in third-party dependencies with no specific impact on Anonimator (report them to the upstream project; tell us if they affect how we use them).</li>
+    <li>Client deployments and their infrastructure, non-default configurations that turn protections off, and external language models.</li>
+    <li>Social engineering, physical attacks and volume-based denial of service.</li>
+    <li>Detection errors without security impact (handled as normal bugs; real leaks are in scope).</li>
+    <li>This website.</li>
+  </ul>
+
+  <h2>5. Rewards</h2>
+  <p>There is no bug bounty programme. We are grateful for good-faith reports.</p>
+
+  <h2>6. Safe harbour</h2>
+  <p>We will not take legal action against good-faith research that follows this policy, does not access third-party data, does not degrade services, and gives us reasonable time before disclosure.</p>
+
+  <h2>7. Changes to this policy</h2>
+  <p>We will update this policy when our process changes and revise the effective date above. A machine-readable contact is published at <a href="https://www.castellon.ch/.well-known/security.txt">https://www.castellon.ch/.well-known/security.txt</a> (RFC 9116).</p>
+
+  <h2>8. Contact</h2>
+  <p>Castellon.CH, Antonio Castellon<br>
+  Email: <a href="mailto:antonio@castellon.ch">antonio@castellon.ch</a><br>
+  Website: <a href="https://www.castellon.ch">https://www.castellon.ch</a><br>
+  Address: Zaunweg 5, 2502 Biel/Bienne, Switzerland</p>
+</body>
+</html>
