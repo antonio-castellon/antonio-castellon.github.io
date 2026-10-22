@@ -469,6 +469,13 @@ indicator-separator {
 .product-subsection { margin: 40px auto; max-width: 1100px; padding: 0 20px; }
 .product-subsection .service-header { text-align: left; margin-bottom: 16px; }
 .products-table-wrap { overflow-x: auto; }
+.products-table-desktop { table-layout: fixed; min-width: 760px; }
+.products-table-desktop th:nth-child(1) { width: 13%; }
+.products-table-desktop th:nth-child(2) { width: 45%; }
+.products-table-desktop th:nth-child(3) { width: 11%; }
+.products-table-desktop th:nth-child(4) { width: 15%; }
+.products-table-desktop th:nth-child(5) { width: 16%; }
+.products-table-desktop td { overflow-wrap: anywhere; }
 .products-table { width: 100%; border-collapse: collapse; border: 1px solid #b03ddd; }
 .products-table th { font-family: 'kongtext', sans-serif; font-size: 12px; color: #F147FF; text-align: left; }
 .products-table th, .products-table td { padding: 12px; border: 1px solid #b03ddd; vertical-align: top; }
