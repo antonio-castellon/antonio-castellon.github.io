@@ -1,0 +1,5 @@
+Contact: mailto:antonio@castellon.ch
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: es, en, de, fr
+Policy: https://www.castellon.ch/anonimator.security.html
+Canonical: https://www.castellon.ch/.well-known/security.txt
