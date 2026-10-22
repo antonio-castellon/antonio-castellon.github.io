@@ -51,7 +51,7 @@ code{color:#F147FF}
   <h1>Your AI agents touch lab systems.<br><span class="em">Who keeps the audit trail?</span></h1>
   <p class="lead">AI agents can now read and write in the tools your lab already owns. Without a record of who did what, when, and through which AI tool, that is a data-integrity gap.
   mcp-glp-audit-proxy is the <span class="em">control layer</span> between the AI brain and your tools: every tool call is checked, optionally approved, and logged in a tamper-evident chain.</p>
-  <p><a class="btn" href="#contact">Request a demo</a><a class="btn" href="#contact">Start a pilot</a></p>
+  <p><a class="btn" href="#contact">Request a demo</a></p>
   <p><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a></p>
 </header>
 
@@ -68,14 +68,14 @@ code{color:#F147FF}
 <section id="compare">
   <h2>Community vs Pro</h2>
   <table>
-    <tr><th>Capability</th><th>Community (MIT, free)</th><th>Pro / Enterprise</th></tr>
+    <tr><th>Capability</th><th>Community: free, MIT, available now (v0.3.0)</th><th>Pro: coming soon</th></tr>
     <tr><td>MCP proxy, allow/denylist, fail-closed</td><td>Yes</td><td>Yes</td></tr>
-    <tr><td>Optional human approval for writes</td><td>Yes (glp_approve)</td><td>Yes, plus Part 11 e-signatures</td></tr>
-    <tr><td>Audit storage</td><td>Tamper-evident JSONL hash chain</td><td>+ SQL / S3 WORM backends</td></tr>
-    <tr><td>Integrity proofs</td><td>SHA-256 chain, verify CLI, --print-head</td><td>+ Ed25519 signing, RFC 3161 timestamps</td></tr>
-    <tr><td>Reports</td><td>RTM + sample OQ report</td><td>+ PDF/CSV reports, IQ/OQ pack</td></tr>
-    <tr><td>Identity</td><td>&mdash;</td><td>SSO</td></tr>
-    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a></td><td>Directly: <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></td></tr>
+    <tr><td>Optional human approval for writes</td><td>Yes (glp_approve)</td><td>Yes</td></tr>
+    <tr><td>Audit storage</td><td>Tamper-evident JSONL hash chain</td><td>+ SQL/MSSQL and S3 Object Lock storage</td></tr>
+    <tr><td>Integrity proofs</td><td>SHA-256 chain, verify CLI, --print-head</td><td>Same as Community</td></tr>
+    <tr><td>Before/after values</td><td>&mdash;</td><td>Yes</td></tr>
+    <tr><td>Reports</td><td>RTM + sample OQ report</td><td>+ PDF/CSV reports, IQ/OQ validation pack</td></tr>
+    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a></td><td>Coming soon: <a class="em" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20Pro">Get notified</a></td></tr>
   </table>
 </section>
 
@@ -85,16 +85,15 @@ code{color:#F147FF}
     <li><span class="em">RTM</span>: a requirements traceability matrix mapping requirements to tests (91 automated tests in Community).</li>
     <li><span class="em">Sample OQ report</span>: a starting point for your own operational qualification.</li>
     <li><span class="em">verify CLI</span>: re-checks the whole hash chain; <code>--print-head</code> prints the chain head for external anchoring.</li>
-    <li><span class="em">Pro: IQ/OQ pack</span>: installation and operational qualification documentation, plus PDF/CSV reports.</li>
+    <li><span class="em">Pro (coming soon): IQ/OQ validation pack</span>: installation and operational qualification documentation, plus PDF/CSV reports.</li>
   </ul>
   <p>These materials support your CSV process; your organisation remains responsible for validating its own use.</p>
 </section>
 
 <section class="cta">
   <h2>See it on your stack</h2>
-  <p>A short demo, or a pilot on one workflow with the tools you already own.</p>
+  <p>A short demo on one workflow with the tools you already own.</p>
   <a class="btn" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20demo%20request">Request a demo</a>
-  <a class="btn" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20pilot%20request">Request a pilot</a>
 </section>
 
 <section id="contact">
@@ -103,7 +102,7 @@ code{color:#F147FF}
     <input name="name" placeholder="Name" required>
     <input name="company" placeholder="Company">
     <input name="email" type="email" placeholder="Email" required>
-    <select name="interest"><option>Demo</option><option>Pilot</option><option>Pro / Enterprise</option><option>Other</option></select>
+    <select name="interest"><option>Demo</option><option>Pro (coming soon)</option><option>Other</option></select>
     <textarea name="message" rows="5" placeholder="Your lab systems and use case"></textarea>
     <button class="btn" type="submit">Send via email</button>
   </form>
