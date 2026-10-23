@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anonimator: a local gateway that pseudonymises personal data before prompts and documents reach cloud AI (ChatGPT, Claude, Copilot) and restores it in the answer. On-premise, fail-closed. Demo on request.">
+<meta name="author" content="Antonio Castellon">
+<title>Anonimator :: A-Team :: Antonio Castellon</title>
+<link rel="shortcut icon" type="image/png" href="/assets/animations/furgo_jumping.png" />
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+<style>
+@font-face{font-family:'kongtext';src:url('/assets/fonts/kongtext.ttf');font-display:swap}
+@font-face{font-family:'courier';src:url('/assets/fonts/courier.ttf');font-display:swap}
+body{margin:0;background:#000;color:#fff;font-family:'courier',monospace}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:10px 3rem;background:#1C012F;position:sticky;top:0;z-index:9}
+.navbar a{color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px;padding:0 1rem}
+.navbar a:hover{color:#F147FF}
+.brand{border:1px solid #fff;padding:10px}
+.hero{background:#49145E;padding:110px 2rem 90px;text-align:center}
+.hero p.kicker{letter-spacing:8px;font-size:18px}
+.hero h1{font-family:'kongtext',sans-serif;font-size:42px;margin:20px 0}
+.hero .lead{max-width:780px;margin:0 auto;font-size:19px;line-height:1.6}
+section{max-width:1000px;margin:0 auto;padding:70px 2rem}
+h2{font-family:'kongtext',sans-serif;font-size:22px;text-align:center;margin-bottom:30px}
+.em{color:#F147FF}
+.steps{display:flex;gap:20px;flex-wrap:wrap}
+.step{flex:1 1 260px;border:1px solid #b03ddd;padding:20px;line-height:1.5}
+.step h3{font-family:'kongtext',sans-serif;font-size:14px;color:#F147FF}
+table{width:100%;border-collapse:collapse;line-height:1.4}
+th,td{border:1px solid #b03ddd;padding:10px;text-align:left;vertical-align:top}
+th{background:#1C012F;font-family:'kongtext',sans-serif;font-size:12px}
+ul{line-height:1.7}
+.btn{display:inline-block;margin:10px;padding:14px 22px;border:2px solid #F147FF;color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px}
+.btn:hover{background:#F147FF;color:#000}
+.cta{text-align:center;background:#1C012F}
+form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+input,textarea,select{font-family:'courier',monospace;font-size:16px;padding:10px;background:#000;color:#fff;border:1px solid #b03ddd}
+button{cursor:pointer;background:transparent}
+.claim{max-width:780px;margin:30px auto 0;padding:14px 18px;border:2px solid #F147FF;font-size:18px;line-height:1.5}
+.disclaimer{font-size:13px;color:#ccc;text-align:center;padding:30px 2rem;border-top:1px solid #333}
+code{color:#F147FF}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="/">A-TEAM</a>
+  <div><a href="#use">Use</a><a href="#how">How</a><a href="#differs">Differs</a><a href="#editions">Editions</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero">
+  <p class="kicker">ANONIMATOR</p>
+  <h1>Use cloud AI on real documents,<br><span class="em">without sending identities.</span></h1>
+  <p class="lead">A local gateway between your people and cloud AI (ChatGPT, Claude, Copilot). It replaces personal data with placeholders before anything leaves your premises, then restores it in the answer.</p>
+  <p class="claim">The external AI provider receives no identifying data; the key never leaves your premises.</p>
+  <p><a class="btn" href="mailto:antonio@castellon.ch?subject=Anonimator%20demo%20request">Request a demo</a><a class="btn" href="/downloads/flyers/anonimator-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></p>
+</header>
+
+<section id="use">
+  <h2>What it is for</h2>
+  <p>Your teams want cloud AI to summarise reports, review files and draft documents. But lab, study, research, teaching and administrative documents contain personal data: names, dates, contact details, AHV/AVS numbers, health information. Sending them to an external AI provider as they are is a risk.</p>
+  <p>Anonimator lets people keep working with the AI tools they already use. Personal data is pseudonymised on your own infrastructure before a request leaves, and the real data is put back into the answer when it returns.</p>
+  <div class="steps">
+    <div class="step"><h3>Who sees the names?</h3><p>Identities in your documents stay on your premises; the cloud AI only sees placeholders.</p></div>
+    <div class="step"><h3>Health data and minors</h3><p>Purpose-aware policies give strict handling of health data and data about minors.</p></div>
+    <div class="step"><h3>Cloud AI, no identities</h3><p>Same AI capabilities, with no identities shared with the AI provider.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p style="text-align:center">Your people &rarr; <span class="em">Anonimator (on your premises)</span> &rarr; cloud AI</p><br>
+  <div class="steps">
+    <div class="step"><h3>1. Work as usual</h3><p>Requests to ChatGPT, Claude or Copilot go through Anonimator, an OpenAI-compatible proxy on your premises.</p></div>
+    <div class="step"><h3>2. Identities become placeholders</h3><p>Names, emails, phone numbers, IBAN, AHV/AVS, DNI/NIE, dates and plates are replaced: <code>Anna Meier &rarr; [PERSON_7f3a]</code>. If Anonimator can't check, nothing is sent.</p></div>
+    <div class="step"><h3>3. Real data restored</h3><p>The cloud AI answers with placeholders; Anonimator puts the real data back. The key is then destroyed.</p></div>
+  </div>
+</section>
+
+<section id="benefits">
+  <h2>Key benefits</h2>
+  <ul>
+    <li><span class="em">On-premise, standard CPUs</span>: no GPU needed. Works as an OpenAI-compatible proxy.</li>
+    <li><span class="em">The key stays with you</span>: mapping only in memory, on premises, destroyed after each query.</li>
+    <li><span class="em">Fail-closed by design</span>: if it can't check, nothing is sent.</li>
+    <li><span class="em">Purpose-aware policies</span>: strict handling of health data and data about minors.</li>
+    <li><span class="em">Audit without personal data</span>: oversight without creating new records of identities.</li>
+    <li><span class="em">Your formats, five languages</span>: Word, Excel, PowerPoint, PDF, text (ODF, CSV, RTF, HTML, email, OCR optional). ES, DE, FR, IT, EN.</li>
+  </ul>
+</section>
+
+<section id="differs">
+  <h2>How it differs</h2>
+  <table>
+    <tr><th></th><th>DIY toolkits (e.g. Presidio)</th><th>Cloud DLP (Google, AWS, Azure)</th><th>Anonimator</th></tr>
+    <tr><td>Where your data is processed</td><td>Locally (library)</td><td>In the provider's cloud</td><td class="em">On your premises</td></tr>
+    <tr><td>Fail-closed gateway in front of cloud AI</td><td>No, building blocks to assemble</td><td>No built-in AI proxy</td><td class="em">Yes: nothing leaves unchecked</td></tr>
+    <tr><td>Real data restored in the AI answer</td><td>Only if you build it</td><td>Varies by service</td><td class="em">Automatic</td></tr>
+    <tr><td>The re-identification key</td><td>Up to you</td><td>Data goes to the provider</td><td class="em">Per query, RAM-only, then destroyed</td></tr>
+  </table>
+  <p>Other on-premise tools also keep data local. Anonimator's focus: one fail-closed gateway with a per-query, RAM-only mapping, not a toolkit you have to assemble.</p>
+</section>
+
+<section id="editions">
+  <h2>Products</h2>
+  <table>
+    <tr><th></th><th>Anonimator (gateway)</th><th>Anonimator MCP</th></tr>
+    <tr><td>What it does</td><td>Local gateway that pseudonymises personal data before prompts and documents reach cloud AI, and restores it in the answer.</td><td>Lets AI assistants and agents send documents and prompts through the local Anonimator gateway, so the external AI provider receives no identifying data; the key never leaves your premises.</td></tr>
+    <tr><td>Status</td><td>Pre-release &middot; demo on request</td><td>Coming soon</td></tr>
+    <tr><td>Licence</td><td>Proprietary (closed source)</td><td>To be announced</td></tr>
+    <tr><td>Deployment</td><td>On-premise only, standard CPUs, OpenAI-compatible proxy</td><td>Works with the local Anonimator gateway</td></tr>
+    <tr><td>Flyer</td><td><a class="em" href="/downloads/flyers/anonimator-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a class="em" href="/downloads/flyers/anonimator-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
+    <tr><td>Security</td><td><a class="em" href="anonimator.security.html">Security policy</a></td><td>&mdash;</td></tr>
+    <tr><td>How to get it</td><td><a class="em" href="mailto:antonio@castellon.ch?subject=Anonimator%20demo%20request">Request a demo</a></td><td><a class="em" href="mailto:antonio@castellon.ch?subject=Anonimator%20MCP">Get notified</a></td></tr>
+  </table>
+</section>
+
+<section id="dataprotection">
+  <h2>Helps with Swiss and EU data protection</h2>
+  <p>Anonimator supports your obligations under the GDPR (data minimisation, pseudonymisation under Art. 4(5), security of processing under Art. 32) and the Swiss nLPD/revDSG. It helps with your data-protection obligations; it does not replace them.</p>
+</section>
+
+<section class="cta">
+  <h2>See it on your documents</h2>
+  <p>Get in touch to request a demo of Anonimator for your organisation in Switzerland or the EU.</p>
+  <a class="btn" href="mailto:antonio@castellon.ch?subject=Anonimator%20demo%20request">Request a demo</a>
+  <a class="btn" href="/downloads/flyers/anonimator-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <form action="mailto:antonio@castellon.ch?subject=Anonimator%20enquiry" method="post" enctype="text/plain">
+    <input name="name" placeholder="Name" required>
+    <input name="company" placeholder="Organisation">
+    <input name="email" type="email" placeholder="Email" required>
+    <select name="interest"><option>Demo</option><option>Anonimator MCP (coming soon)</option><option>Other</option></select>
+    <textarea name="message" rows="5" placeholder="Your documents, AI tools and use case"></textarea>
+    <button class="btn" type="submit">Send via email</button>
+  </form>
+</section>
+
+<p class="disclaimer">Anonimator performs pseudonymisation (GDPR Art. 4(5)), not anonymisation: the data remains personal data for your organisation (CJEU, C-413/23 P). Anonimator helps with your data-protection obligations; it does not replace them. "Anonimator" is a working name. ChatGPT, Claude, Copilot and Presidio are trademarks of their respective owners.<br><a class="em" href="anonimator.security.html">Security policy</a> &middot; &copy; Antonio Castellon &middot; <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
+</body>
+</html>
