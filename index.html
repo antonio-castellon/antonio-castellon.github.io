@@ -10,7 +10,6 @@
     <meta name="author" content="Antonio Castellon">
 	<meta name="copyright" content="Copyright owner" />
 	<title>A-Team :: Antonio's Team :: A non-Standard Consultant Team</title>
-	<link rel="shortcut icon" type="image/png" href="/assets/animations/furgo_jumping.png" />
     <!-- Local fonts are now self-hosted (see assets/css/style.css).
          Removed external CDN links (courier, arcade-classic) because they were causing
          console errors on the live site (CORS / loading failures for 'courier').
@@ -41,6 +40,22 @@
     <link rel="preload" href="/assets/fonts/courier.ttf" as="font" type="font/ttf" crossorigin>
 
     <script src="https://kit.fontawesome.com/8350adaf94.js" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://castellon.ch/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://castellon.ch/">
+  <meta property="og:title" content="A-Team :: Antonio's Team :: A non-Standard Consultant Team">
+  <meta property="og:description" content="We are a non Standard Consultant Team, specialized in Software Development, Communications and Security, Drug Discovery">
+  <meta property="og:image" content="https://castellon.ch/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@aj_castellon">
+  <meta name="twitter:title" content="A-Team :: Antonio's Team :: A non-Standard Consultant Team">
+  <meta name="twitter:description" content="We are a non Standard Consultant Team, specialized in Software Development, Communications and Security, Drug Discovery">
+  <meta name="twitter:image" content="https://castellon.ch/assets/images/og-image.jpg">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://castellon.ch/#antonio", "name": "Antonio Castellon", "url": "https://castellon.ch/", "sameAs": ["https://ch.linkedin.com/in/antoniocastellon", "https://x.com/aj_castellon", "https://github.com/antonio-castellon"]}, {"@type": "Organization", "name": "A-Team :: Antonio's Team", "url": "https://castellon.ch/", "logo": "https://castellon.ch/assets/images/apple-touch-icon.png", "founder": {"@id": "https://castellon.ch/#antonio"}, "sameAs": ["https://ch.linkedin.com/in/antoniocastellon", "https://x.com/aj_castellon", "https://github.com/antonio-castellon"]}]}</script>
 </head>
 <body>
     
@@ -49,7 +64,7 @@
         <nav class="navbar">
             <div class="left-navbar">
                 <div style="display: flex;">
-                    <img width="40px" height="40px" src="assets/animations/furgo_jumping.gif">	&nbsp;
+                    <img width="40px" height="40px" src="assets/animations/furgo_jumping.gif" alt="A-Team logo">	&nbsp;
                     <div style="align-items: center;color: #ffffff; font-size: 18px; font-family: 'kongtext', sans-serif; margin-left: 5px;">
                         A<sub style="font-size:10px; font-family: 'kongtext', sans-serif; color:#F147FF;">ntonio's</sub>-TEAM
                     </div>
@@ -112,7 +127,7 @@
     
                 <div class="services">
                     <div class="service  serviceSlides fade">
-                        <video class="service-image"  id="video_software_development"
+                        <video class="service-image"  id="video_software_development" preload="none"
 								loop 
 								autoplay 
 								muted
@@ -139,7 +154,7 @@
                         </div>
                     </div>
                     <div class="service  serviceSlides fade service-even">
-                        <video class="service-image"  id="video_data_management"
+                        <video class="service-image"  id="video_data_management" preload="none"
 								loop 
 								autoplay 
 								muted
@@ -170,7 +185,7 @@
 						
                     </div>
                     <div class="service  serviceSlides fade">
-                        <video class="service-image"  id="video_security"
+                        <video class="service-image"  id="video_security" preload="none"
 								loop 
 								autoplay 
 								muted
@@ -209,7 +224,7 @@
                 <div class="services">
                     <!-- CannaBorn Card -->
                     <div class="service">
-                        <img src="assets/images/case-studies/cannaborn.jpg" alt="CannaBorn Data Platform" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <img src="assets/images/case-studies/cannaborn.jpg" loading="lazy" alt="CannaBorn Data Platform" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
                         <div class="service-detail">
                             <h3 class="service-header">CannaBorn<br/>Scientific Data Platform</h3>
                             <p class="service-para">
@@ -224,7 +239,7 @@
 
                     <!-- Gabriel Card -->
                     <div class="service service-even">
-                        <img src="assets/images/case-studies/gabriel-erp.jpg" alt="Gabriel ERP Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <img src="assets/images/case-studies/gabriel-erp.jpg" loading="lazy" alt="Gabriel ERP Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
                         <div class="service-detail">
                             <h3 class="service-header">Legacy ERP<br/>to Modern Stack</h3>
                             <p class="service-para">
@@ -239,7 +254,7 @@
 
                     <!-- Legacy Chemoinformatics Modernization Card -->
                     <div class="service">
-                        <img src="assets/images/case-studies/legacy-chemoinformatics.jpg" alt="Legacy Chemoinformatics Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
+                        <img src="assets/images/case-studies/legacy-chemoinformatics.jpg" loading="lazy" alt="Legacy Chemoinformatics Modernization" style="width: 260px; height: 160px; object-fit: cover; border-radius: 40px; border: 1px solid #b03ddd; image-rendering: pixelated;" />
                         <div class="service-detail">
                             <h3 class="service-header">Monolith → Microservices<br/>+ Graph DB</h3>
                             <p class="service-para">
@@ -456,7 +471,7 @@
                 <div class="team">
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="assets/images/antonio.png" alt="antonio castellon"/>
+                            <img src="assets/images/antonio.png" alt="antonio castellon" loading="lazy"/>
 							<div class="social-media">
 							<a href="https://www.linkedin.com/in/antoniocastellon/" target="_blank"><i class="fab fa-linkedin"></i></a>
 							</div>
@@ -480,7 +495,7 @@
                     </div>
                     <div class="team-member indent">
                         <div class="team-image">
-                            <img src="assets/images/raul.png" alt=""/>
+                            <img src="assets/images/raul.png" alt="Raul Lopez" loading="lazy"/>
 							<div class="social-media">
                             <a href="https://www.linkedin.com/in/nevot/" target="_blank"><i class="fab fa-linkedin"></i></a>
 							</div>
@@ -507,7 +522,7 @@
                     </div>
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="assets/images/raula.png" alt=""/>
+                            <img src="assets/images/raula.png" alt="Raul Alares" loading="lazy"/>
 							<div class="social-media">
                             <a href="https://www.linkedin.com/in/raul-alares-7951b8118/" target="_blank"><i class="fab fa-linkedin"></i></a>
 							</div>
@@ -530,7 +545,7 @@
                     </div>
                     <div class="team-member indent">
                         <div class="team-image">
-                            <img src="assets/images/joan.png" alt=""/>
+                            <img src="assets/images/joan.png" alt="Joan Gallifa" loading="lazy"/>
 							<div class="social-media">
                             <a href="https://www.linkedin.com/in/joangallifa/" target="_blank"><i class="fab fa-linkedin"></i></a>
 							</div>
@@ -565,7 +580,7 @@
                 <div class="team">
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="assets/images/daniel.png" alt=""/>
+                            <img src="assets/images/daniel.png" alt="Daniel Prado" loading="lazy"/>
 							<div class="social-media">
 							<a href="https://www.linkedin.com/in/danielpradorodriguez/" target="_blank"><i class="fab fa-linkedin"></i></a>
 							</div>
@@ -622,7 +637,7 @@
 
 
                 <div class="section-map no-mobile" style="text-align: center;">
-                    <img src="assets/images/map2.png" height="250" style="border:0; border-radius: 10px;">
+                    <img src="assets/images/map2.png" alt="Map" height="250" loading="lazy" style="border:0; border-radius: 10px;">
                     <br/>
                     <br/>
                 </div>
