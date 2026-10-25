@@ -6,38 +6,7 @@
 <meta name="description" content="GxP Gateway Audit (package mcp-glp-audit-proxy): a self-hosted reverse proxy that keeps a tamper-evident, fail-closed audit trail of MCP, API and LLM calls over TLS. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.">
 <meta name="author" content="Antonio Castellon">
 <title>GxP Gateway Audit :: A-Team :: Antonio Castellon</title>
-<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-<style>
-@font-face{font-family:'kongtext';src:url('/assets/fonts/kongtext.ttf');font-display:swap}
-@font-face{font-family:'courier';src:url('/assets/fonts/courier.ttf');font-display:swap}
-body{margin:0;background:#000;color:#fff;font-family:'courier',monospace}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:10px 3rem;background:#1C012F;position:sticky;top:0;z-index:9}
-.navbar a{color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px;padding:0 1rem}
-.navbar a:hover{color:#F147FF}
-.brand{border:1px solid #fff;padding:10px}
-.hero{background:#49145E;padding:110px 2rem 90px;text-align:center}
-.hero p.kicker{letter-spacing:8px;font-size:18px}
-.hero h1{font-family:'kongtext',sans-serif;font-size:42px;margin:20px 0}
-.hero .lead{max-width:780px;margin:0 auto;font-size:19px;line-height:1.6}
-section{max-width:1000px;margin:0 auto;padding:70px 2rem}
-h2{font-family:'kongtext',sans-serif;font-size:22px;text-align:center;margin-bottom:30px}
-.em{color:#F147FF}
-.steps{display:flex;gap:20px;flex-wrap:wrap}
-.step{flex:1 1 260px;border:1px solid #b03ddd;padding:20px;line-height:1.5}
-.step h3{font-family:'kongtext',sans-serif;font-size:14px;color:#F147FF}
-table{width:100%;border-collapse:collapse;line-height:1.4}
-th,td{border:1px solid #b03ddd;padding:10px;text-align:left;vertical-align:top}
-th{background:#1C012F;font-family:'kongtext',sans-serif;font-size:12px}
-ul{line-height:1.7}
-.btn{display:inline-block;margin:10px;padding:14px 22px;border:2px solid #F147FF;color:#fff;text-decoration:none;font-family:'kongtext',sans-serif;font-size:12px}
-.btn:hover{background:#F147FF;color:#000}
-.cta{text-align:center;background:#1C012F}
-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-input,textarea,select{font-family:'courier',monospace;font-size:16px;padding:10px;background:#000;color:#fff;border:1px solid #b03ddd}
-button{cursor:pointer;background:transparent}
-.disclaimer{font-size:13px;color:#ccc;text-align:center;padding:30px 2rem;border-top:1px solid #333}
-code{color:#F147FF}
-</style>
+<link href="assets/css/product.css" rel="stylesheet" type="text/css" />
   <link rel="canonical" href="https://castellon.ch/glp-audit-proxy">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
@@ -58,30 +27,191 @@ code{color:#F147FF}
 <body>
 <nav class="navbar">
   <a class="brand" href="/">A-TEAM</a>
-  <div><a href="#how">How</a><a href="#compare">Editions</a><a href="#report">Reports</a><a href="#contact">Contact</a></div>
+  <div><a href="#benefits">Benefits</a><a href="#regulations">Regulations</a><a href="#how">How</a><a href="#compare">Editions</a><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero">
   <p class="kicker">GXP GATEWAY AUDIT</p>
   <h1>Your AI, APIs and gateways touch lab systems.<br><span class="em">Who keeps the audit trail?</span></h1>
-  <p class="lead">GxP Gateway Audit (package <code>mcp-glp-audit-proxy</code>) is a self-hosted reverse proxy between your clients and the systems they call. It audits MCP and HTTPS channels: MCP tools, APIs, gateways and LLM calls. Every call goes into a <span class="em">tamper-evident, fail-closed</span> hash-chained audit trail, as a complement to your systems' own audit trail. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.</p>
-  <p><a class="btn" href="#contact">Request a demo</a></p>
-  <p><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a><a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></p>
+  <p class="lead">GxP Gateway Audit (package <code>mcp-glp-audit-proxy</code>) records every call your AI assistants, integrations and gateways make to your systems, in a <span class="em">tamper-evident, fail-closed</span> audit trail you host yourself. It complements your systems' own audit trail and is designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.</p>
+  <div class="actions"><a class="btn primary" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20demo%20request">Request a demo</a><a class="btn" href="#regulations">See the 23 regulations</a><a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></div>
+  <div class="trust"><span class="pill">Community edition: free, MIT, v0.4.0</span><span class="pill">Self-hosted</span><span class="pill">23 regulations and guidelines mapped</span><span class="pill">240 automated tests</span></div>
 </header>
 
-<section id="how">
-  <h2>How it works</h2>
-  <p style="text-align:center">Clients &rarr; <span class="em">GxP Gateway Audit</span> (MCP / HTTPS, always TLS) &rarr; MCP servers, APIs, gateways, LLM endpoints</p><br>
-  <div class="steps">
-    <div class="step"><h3>1. Connect</h3><p>It runs as a reverse proxy: the client only changes its base URL. Supported flows: <code>mcp2mcp</code>, <code>mcp2api</code>, <code>api2mcp</code>, <code>api2api</code>, <code>mcp2llm</code>, <code>api2llm</code>. Always TLS; authentication by mTLS and/or token.</p></div>
-    <div class="step"><h3>2. Record</h3><p>Every call is appended to a hash-chained audit trail (audit schema 1.3.0). Every record is RFC 8785 canonical JSON, hash-chained with SHA-256. Optional human approval: an approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call. You choose how bodies are stored: hash only (default), redacted or full.</p></div>
-    <div class="step"><h3>3. Fail closed &amp; verify</h3><p>If a record is deleted or the chain is broken, it stops and alerts, saying which record and when. Archive manifests and a review command help you check the trail; offline runs keep their own hash-chained run log.</p></div>
+<section id="benefits">
+  <h2>What you get</h2>
+  <p class="sub">Use AI and automation on regulated data without losing track of who did what, when and why.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">01</div><h3>A complete record of every call</h3><p>Who called which system, what was done, when, and the reason given, written at the moment of the call.</p></div>
+    <div class="card"><div class="icon">02</div><h3>Tampering is detectable</h3><p>Records are hash-chained. If one is altered, removed or reordered, verification shows exactly where.</p></div>
+    <div class="card"><div class="icon">03</div><h3>Nothing goes unrecorded</h3><p>Fail-closed: if a record cannot be written, the call does not go through, and you are alerted.</p></div>
+    <div class="card"><div class="icon">04</div><h3>Human approval when you need it</h3><p>Optionally require an approver to approve, review or reject a call before it is authorised.</p></div>
+    <div class="card"><div class="icon">05</div><h3>Ready for inspections and audits</h3><p>Search and export the trail, run review-by-exception, and produce an offline regulatory report of your configuration.</p></div>
+    <div class="card"><div class="icon">06</div><h3>Easy to add</h3><p>Runs as a reverse proxy in front of what you already have: clients only change their base URL. Always over TLS.</p></div>
   </div>
 </section>
 
-<section id="compare">
+<section id="regulations" class="alt"><div class="inner">
+  <h2>Regulations and guidelines covered</h2>
+  <p class="sub">GxP Gateway Audit is designed to support the audit-trail and data-integrity requirements of each regulation below. Whether a system meets a regulation depends on the customer's validation, configuration and procedures.</p>
+  <div class="filters" role="group" aria-label="Filter by support"><button data-f="all" class=on>All (23)</button><button data-f="s-community">Community (11)</button><button data-f="s-partly">Partly (7)</button><button data-f="s-customer">Customer responsibility (2)</button><button data-f="s-na">Not analysed (3)</button></div>
+  <div class="grid" id="regcards">
+<a class="card reg s-community" data-s="s-community" href="#1-fda-21-cfr-part-11"><span class="badge s-community">Community</span><h3>FDA 21 CFR Part 11</h3><span class="meta">Regulation &middot; USA</span><p><strong>Status:</strong> Supported in Community (audit trail, access); e-signatures out of scope</p><p><strong>Key controls:</strong> Hash-chained time-stamped trail, RBAC, export</p><p><strong>Your part:</strong> Customer validates, syncs clocks, reviews trail; approval is not an e-signature</p></a>
+<a class="card reg s-community" data-s="s-community" href="#2-fda-predicate-rules-and-guidance-21-cfr-58-211-part-11-scope-and-application-2003-data-integrity-qa-2018"><span class="badge s-community">Community</span><h3>21 CFR 58 (GLP) and 211 (GMP), record clauses</h3><span class="meta">Regulation &middot; USA</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Reason on writes, per-person identity</p><p><strong>Your part:</strong> Analysed for record-keeping clauses only; keep reason capture on, no shared tokens</p></a>
+<a class="card reg s-community" data-s="s-community" href="#2-fda-predicate-rules-and-guidance-21-cfr-58-211-part-11-scope-and-application-2003-data-integrity-qa-2018"><span class="badge s-community">Community</span><h3>FDA Part 11 Scope and Application (2003), Data Integrity Q&amp;A (2018)</h3><span class="meta">Guidance &middot; USA</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Reconstruction of events, unique attribution</p><p><strong>Your part:</strong> Customer SOPs and review</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#coverage-of-this-mapping"><span class="badge s-partly">Partly</span><h3>FDA Computer Software Assurance (2026)</h3><span class="meta">Guidance &middot; USA</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Digital logs as assurance evidence</p><p><strong>Your part:</strong> Device quality-system software; supporting practice only</p></a>
+<a class="card reg s-community" data-s="s-community" href="#3-eu-gmp-annex-11-2011-and-the-2025-draft-revision"><span class="badge s-community">Community</span><h3>EU GMP Annex 11 (2011) and 2025 draft</h3><span class="meta">Regulation (GMP guide) &middot; EU / PIC/S</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Who/what/when/why, UTC, audit cannot be switched off, searchable export</p><p><strong>Your part:</strong> Draft not in force; old/new values stay in target system</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#coverage-of-this-mapping"><span class="badge s-partly">Partly</span><h3>EU GMP Chapter 4</h3><span class="meta">Regulation (GMP guide) &middot; EU</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Retention profiles, no disposal</p><p><strong>Your part:</strong> Analysed for record clauses; archive is customer duty</p></a>
+<a class="card reg s-community" data-s="s-community" href="#6d-ema-guideline-on-computerised-systems-and-electronic-data-in-clinical-trials-2023-pics-pi-011-3-and-agit-change-management-and-it-service-provider-guidelines"><span class="badge s-community">Community</span><h3>EMA computerised systems in clinical trials (2023)</h3><span class="meta">Guidance &middot; EU</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> UTC, config record at start, search/export</p><p><strong>Your part:</strong> Main text analysed; sec. 6.12 and Annexes 1-4 not read in detail</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#7-eu-ai-act-only-for-high-risk-ai-systems"><span class="badge s-partly">Partly</span><h3>EU AI Act (high-risk systems)</h3><span class="meta">Regulation &middot; EU</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Automatic event logs, 6-month default retention</p><p><strong>Your part:</strong> Only if the customer&#x27;s AI system is high-risk; gateway alone does not meet Art. 12</p></a>
+<a class="card reg s-customer" data-s="s-customer" href="#8-gdpr-regulation-eu-2016679"><span class="badge s-customer">Customer responsibility</span><h3>GDPR (EU) 2016/679</h3><span class="meta">Regulation &middot; EU</span><p><strong>Status:</strong> Customer responsibility</p><p><strong>Key controls:</strong> hash_only default, personal-data table (Art. 30)</p><p><strong>Your part:</strong> Customer is controller: body mode, retention, erasure; no encryption at rest in Community</p></a>
+<a class="card reg s-community" data-s="s-community" href="#4-oecd-glp-principles-no-1-and-no-17-computerised-systems"><span class="badge s-community">Community</span><h3>OECD GLP Principles No. 1 and No. 17</h3><span class="meta">Guidance (GLP) &middot; OECD</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Append-only attributable records, QA read-only, 10-year profile, legal hold</p><p><strong>Your part:</strong> No. 1 analysed for record clauses; facility SOPs and archive</p></a>
+<a class="card reg s-community" data-s="s-community" href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance"><span class="badge s-community">Community</span><h3>OECD No. 22 Data Integrity</h3><span class="meta">Guidance (GLP) &middot; OECD</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Startup record, config changes, reason</p><p><strong>Your part:</strong> Add-on audit is a justified, time-bound measure</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#6c-oecd-no-15-archives-no-25-it-security-and-no-17-supplement-1-cloud"><span class="badge s-partly">Partly</span><h3>OECD No. 15, No. 25, No. 17 Suppl. 1</h3><span class="meta">Guidance (GLP) &middot; OECD</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Tamper-evident chain, independent verify, TLS 1.3</p><p><strong>Your part:</strong> WORM and signing: Pro or customer storage; failed-login lockout optional, off by default</p></a>
+<a class="card reg s-community" data-s="s-community" href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance"><span class="badge s-community">Community</span><h3>WHO TRS 1033 Annex 4</h3><span class="meta">Guidance &middot; International (WHO)</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Users, dates, reasons, audit enable/disable</p><p><strong>Your part:</strong> No shared logins: customer user management</p></a>
+<a class="card reg s-community" data-s="s-community" href="#5-mhra-gxp-data-integrity-2018-and-pics-pi-041-1"><span class="badge s-community">Community</span><h3>MHRA GxP Data Integrity (2018)</h3><span class="meta">Guidance &middot; UK</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Who/what/when/why at time of call</p><p><strong>Your part:</strong> ALCOA+ across process is customer duty</p></a>
+<a class="card reg s-community" data-s="s-community" href="#5-mhra-gxp-data-integrity-2018-and-pics-pi-041-1"><span class="badge s-community">Community</span><h3>PIC/S PI 041-1 and PI 011-3</h3><span class="meta">Guidance &middot; International (PIC/S)</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> True-time records</p><p><strong>Your part:</strong> PI 011-3 analysed for audit trail/backup sections only</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#coverage-of-this-mapping"><span class="badge s-partly">Partly</span><h3>ICH E6(R3)</h3><span class="meta">Guidance (GCP) &middot; International (ICH)</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Access and role logging, retention</p><p><strong>Your part:</strong> Data governance sections only; GCP not a target use</p></a>
+<a class="card reg s-community" data-s="s-community" href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance"><span class="badge s-community">Community</span><h3>Swiss GLP Ordinance SR 813.112.1</h3><span class="meta">Regulation &middot; Switzerland</span><p><strong>Status:</strong> Supported in Community</p><p><strong>Key controls:</strong> Person-linked changes with reason, 10-year retention profile</p><p><strong>Your part:</strong> Archive and backup are customer duties</p></a>
+<a class="card reg s-customer" data-s="s-customer" href="#6a-swiss-agit-guidelines-for-the-validation-of-computerised-systems-v40-2025"><span class="badge s-customer">Customer responsibility</span><h3>Swiss AGIT Validation of Computerised Systems V4.0</h3><span class="meta">Guidance (GLP) &middot; Switzerland</span><p><strong>Status:</strong> Customer responsibility (tools Supported in Community)</p><p><strong>Key controls:</strong> OQ runner, RTM, config report</p><p><strong>Your part:</strong> Customer validates the gateway (AGIT category C); Pro adds IQ/OQ pack</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#6b-swiss-agit-guidelines-for-the-archiving-of-electronic-raw-data-v30-2026-and-for-the-acquisition-and-processing-of-electronic-raw-data-v30-2025"><span class="badge s-partly">Partly</span><h3>Swiss AGIT Archiving and Acquisition of Electronic Raw Data V3.0</h3><span class="meta">Guidance (GLP) &middot; Switzerland</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Readable JSONL, open verifier, archive manifest</p><p><strong>Your part:</strong> WORM/off-site archive and archivist are customer duties</p></a>
+<a class="card reg s-partly" data-s="s-partly" href="#6d-ema-guideline-on-computerised-systems-and-electronic-data-in-clinical-trials-2023-pics-pi-011-3-and-agit-change-management-and-it-service-provider-guidelines"><span class="badge s-partly">Partly</span><h3>Swiss AGIT Change Management and IT Service Providers V2.0</h3><span class="meta">Guidance (GLP) &middot; Switzerland</span><p><strong>Status:</strong> Partly supported</p><p><strong>Key controls:</strong> Release notes naming affected requirements</p><p><strong>Your part:</strong> Impact assessment and supplier agreements are customer duties</p></a>
+<a class="card reg s-na" data-s="s-na" href="#coverage-of-this-mapping"><span class="badge s-na">Not analysed</span><h3>ISPE GAMP 5 2nd ed.</h3><span class="meta">Industry guide &middot; International</span><p><strong>Status:</strong> Not analysed</p><p><strong>Key controls:</strong> -</p><p><strong>Your part:</strong> Paywalled; not regulator text</p></a>
+<a class="card reg s-na" data-s="s-na" href="#coverage-of-this-mapping"><span class="badge s-na">Not analysed</span><h3>eIDAS / ZertES (qualified signatures)</h3><span class="meta">Regulation &middot; EU / Switzerland</span><p><strong>Status:</strong> Not analysed</p><p><strong>Key controls:</strong> -</p><p><strong>Your part:</strong> Out of scope; e-signatures not provided</p></a>
+<a class="card reg s-na" data-s="s-na" href="#coverage-of-this-mapping"><span class="badge s-na">Not analysed</span><h3>Swissmedic GMP/GCP guidance</h3><span class="meta">Guidance &middot; Switzerland</span><p><strong>Status:</strong> Not analysed</p><p><strong>Key controls:</strong> -</p><p><strong>Your part:</strong> No separate guideline located; Swissmedic applies EU GMP/PIC/S</p></a>
+  </div>
+  <div class="legend"><strong>Legend.</strong> Legend: Supported in Community = the open-source edition provides controls designed to support the requirement; Supported with Pro = needs Pro features (signing, WORM, database storage, IQ/OQ pack); Partly supported = some requirements are supported, others stay with the customer or were only partly analysed; Customer responsibility = mainly the customer&#x27;s procedures, the gateway only helps; Not analysed = text not reviewed (see Coverage). &quot;Supported&quot; is not a third-party approval; the customer&#x27;s validation decides fitness for use. Rows link to the section that gives details.</div>
+  <p class="note">No regulation is Pro-only as a whole: every supported row is supported by the free Community edition. Pro adds features such as record signing, WORM retention, database storage and the IQ/OQ pack. Personal electronic signatures under 21 CFR Part 11 are out of scope.</p>
+
+  <div class="limits" id="limitations">
+    <h3>Limitations</h3>
+<ul><li>The gateway records calls, not the internal state of the target system. It complements, and does not replace, the target system's own audit trail (old and new values).</li><li>In hash-only and redacted modes the trail proves a payload existed and was unaltered, but not its content. Responses are stored only in full mode.</li><li>A shared bearer token is an access gate, not a unique user identity. Attribution through an end-user header is only as strong as the gateway that authenticated the person.</li><li>The Community edition is tamper-evident (hash chain), not signed and not tamper-proof. Signing and WORM retention are Pro features.</li><li>Reason capture can be configured off; doing so removes a control the regulations expect.</li><li>Timestamps are as accurate as the host clock.</li><li>The failed-login lockout (listen.auth_failure_limit) is optional and off by default. The configuration report links it to its rule, and the customer's QA decides whether to switch it on.</li><li>Configuration changes take effect, and are recorded, only when the proxy restarts.</li></ul>
+  </div>
+
+  <h3 style="margin-top:44px;text-align:center">Summary table</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Regulation</th><th>Type</th><th>Origin</th><th>Support</th><th>Key controls</th><th>Notes / customer action</th></tr>
+<tr><td><a href="#1-fda-21-cfr-part-11">FDA 21 CFR Part 11</a></td><td>Regulation</td><td>USA</td><td><span class="badge s-community">Community</span><br><small>Supported in Community (audit trail, access); e-signatures out of scope</small></td><td>Hash-chained time-stamped trail, RBAC, export</td><td>Customer validates, syncs clocks, reviews trail; approval is not an e-signature</td></tr>
+<tr><td><a href="#2-fda-predicate-rules-and-guidance-21-cfr-58-211-part-11-scope-and-application-2003-data-integrity-qa-2018">21 CFR 58 (GLP) and 211 (GMP), record clauses</a></td><td>Regulation</td><td>USA</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Reason on writes, per-person identity</td><td>Analysed for record-keeping clauses only; keep reason capture on, no shared tokens</td></tr>
+<tr><td><a href="#2-fda-predicate-rules-and-guidance-21-cfr-58-211-part-11-scope-and-application-2003-data-integrity-qa-2018">FDA Part 11 Scope and Application (2003), Data Integrity Q&amp;A (2018)</a></td><td>Guidance</td><td>USA</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Reconstruction of events, unique attribution</td><td>Customer SOPs and review</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">FDA Computer Software Assurance (2026)</a></td><td>Guidance</td><td>USA</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Digital logs as assurance evidence</td><td>Device quality-system software; supporting practice only</td></tr>
+<tr><td><a href="#3-eu-gmp-annex-11-2011-and-the-2025-draft-revision">EU GMP Annex 11 (2011) and 2025 draft</a></td><td>Regulation (GMP guide)</td><td>EU / PIC/S</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Who/what/when/why, UTC, audit cannot be switched off, searchable export</td><td>Draft not in force; old/new values stay in target system</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">EU GMP Chapter 4</a></td><td>Regulation (GMP guide)</td><td>EU</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Retention profiles, no disposal</td><td>Analysed for record clauses; archive is customer duty</td></tr>
+<tr><td><a href="#6d-ema-guideline-on-computerised-systems-and-electronic-data-in-clinical-trials-2023-pics-pi-011-3-and-agit-change-management-and-it-service-provider-guidelines">EMA computerised systems in clinical trials (2023)</a></td><td>Guidance</td><td>EU</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>UTC, config record at start, search/export</td><td>Main text analysed; sec. 6.12 and Annexes 1-4 not read in detail</td></tr>
+<tr><td><a href="#7-eu-ai-act-only-for-high-risk-ai-systems">EU AI Act (high-risk systems)</a></td><td>Regulation</td><td>EU</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Automatic event logs, 6-month default retention</td><td>Only if the customer&#x27;s AI system is high-risk; gateway alone does not meet Art. 12</td></tr>
+<tr><td><a href="#8-gdpr-regulation-eu-2016679">GDPR (EU) 2016/679</a></td><td>Regulation</td><td>EU</td><td><span class="badge s-customer">Customer responsibility</span><br><small>Customer responsibility</small></td><td>hash_only default, personal-data table (Art. 30)</td><td>Customer is controller: body mode, retention, erasure; no encryption at rest in Community</td></tr>
+<tr><td><a href="#4-oecd-glp-principles-no-1-and-no-17-computerised-systems">OECD GLP Principles No. 1 and No. 17</a></td><td>Guidance (GLP)</td><td>OECD</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Append-only attributable records, QA read-only, 10-year profile, legal hold</td><td>No. 1 analysed for record clauses; facility SOPs and archive</td></tr>
+<tr><td><a href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance">OECD No. 22 Data Integrity</a></td><td>Guidance (GLP)</td><td>OECD</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Startup record, config changes, reason</td><td>Add-on audit is a justified, time-bound measure</td></tr>
+<tr><td><a href="#6c-oecd-no-15-archives-no-25-it-security-and-no-17-supplement-1-cloud">OECD No. 15, No. 25, No. 17 Suppl. 1</a></td><td>Guidance (GLP)</td><td>OECD</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Tamper-evident chain, independent verify, TLS 1.3</td><td>WORM and signing: Pro or customer storage; failed-login lockout optional, off by default</td></tr>
+<tr><td><a href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance">WHO TRS 1033 Annex 4</a></td><td>Guidance</td><td>International (WHO)</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Users, dates, reasons, audit enable/disable</td><td>No shared logins: customer user management</td></tr>
+<tr><td><a href="#5-mhra-gxp-data-integrity-2018-and-pics-pi-041-1">MHRA GxP Data Integrity (2018)</a></td><td>Guidance</td><td>UK</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Who/what/when/why at time of call</td><td>ALCOA+ across process is customer duty</td></tr>
+<tr><td><a href="#5-mhra-gxp-data-integrity-2018-and-pics-pi-041-1">PIC/S PI 041-1 and PI 011-3</a></td><td>Guidance</td><td>International (PIC/S)</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>True-time records</td><td>PI 011-3 analysed for audit trail/backup sections only</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">ICH E6(R3)</a></td><td>Guidance (GCP)</td><td>International (ICH)</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Access and role logging, retention</td><td>Data governance sections only; GCP not a target use</td></tr>
+<tr><td><a href="#6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance">Swiss GLP Ordinance SR 813.112.1</a></td><td>Regulation</td><td>Switzerland</td><td><span class="badge s-community">Community</span><br><small>Supported in Community</small></td><td>Person-linked changes with reason, 10-year retention profile</td><td>Archive and backup are customer duties</td></tr>
+<tr><td><a href="#6a-swiss-agit-guidelines-for-the-validation-of-computerised-systems-v40-2025">Swiss AGIT Validation of Computerised Systems V4.0</a></td><td>Guidance (GLP)</td><td>Switzerland</td><td><span class="badge s-customer">Customer responsibility</span><br><small>Customer responsibility (tools Supported in Community)</small></td><td>OQ runner, RTM, config report</td><td>Customer validates the gateway (AGIT category C); Pro adds IQ/OQ pack</td></tr>
+<tr><td><a href="#6b-swiss-agit-guidelines-for-the-archiving-of-electronic-raw-data-v30-2026-and-for-the-acquisition-and-processing-of-electronic-raw-data-v30-2025">Swiss AGIT Archiving and Acquisition of Electronic Raw Data V3.0</a></td><td>Guidance (GLP)</td><td>Switzerland</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Readable JSONL, open verifier, archive manifest</td><td>WORM/off-site archive and archivist are customer duties</td></tr>
+<tr><td><a href="#6d-ema-guideline-on-computerised-systems-and-electronic-data-in-clinical-trials-2023-pics-pi-011-3-and-agit-change-management-and-it-service-provider-guidelines">Swiss AGIT Change Management and IT Service Providers V2.0</a></td><td>Guidance (GLP)</td><td>Switzerland</td><td><span class="badge s-partly">Partly</span><br><small>Partly supported</small></td><td>Release notes naming affected requirements</td><td>Impact assessment and supplier agreements are customer duties</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">ISPE GAMP 5 2nd ed.</a></td><td>Industry guide</td><td>International</td><td><span class="badge s-na">Not analysed</span><br><small>Not analysed</small></td><td>-</td><td>Paywalled; not regulator text</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">eIDAS / ZertES (qualified signatures)</a></td><td>Regulation</td><td>EU / Switzerland</td><td><span class="badge s-na">Not analysed</span><br><small>Not analysed</small></td><td>-</td><td>Out of scope; e-signatures not provided</td></tr>
+<tr><td><a href="#coverage-of-this-mapping">Swissmedic GMP/GCP guidance</a></td><td>Guidance</td><td>Switzerland</td><td><span class="badge s-na">Not analysed</span><br><small>Not analysed</small></td><td>-</td><td>No separate guideline located; Swissmedic applies EU GMP/PIC/S</td></tr>
+  </table></div>
+
+  <h3 style="margin-top:44px;text-align:center">Details by regulation</h3>
+  <p class="note">GxP Gateway Audit is an audit proxy placed in front of MCP tool servers and HTTPS APIs. It writes a computer-generated, time-stamped, hash-chained audit trail of every call. It is designed to support customers&#x27; GLP, GMP and Part 11 data-integrity programmes. It has no third-party approval, and using it does not by itself make any system meet these rules. Fitness for use must be established by the customer&#x27;s own validation, SOPs and reviews.</p>
+  <p class="note">Texts checked: 25 October 2026, official sources (eCFR, fda.gov, health.ec.europa.eu, oecd.org, one.oecd.org, who.int, fedlex.admin.ch, picscheme.org, gov.uk, ich.org, ai-act-service-desk.ec.europa.eu).</p>
+<details id="1-fda-21-cfr-part-11"><summary>1. FDA 21 CFR Part 11</summary>
+<p>Requirement: 11.10(e) "Use of secure, computer-generated, time-stamped audit trails to independently record the date and time of operator entries and actions that create, modify, or delete electronic records. Record changes shall not obscure previously recorded information." Also 11.10(b) copies, 11.10(c) protection, 11.10(d) "Limiting system access to authorized individuals", 11.10(g) authority checks.</p>
+<p>Designed to support: server-generated UTC timestamps; append-only SHA-256 hash chain with a verify tool that detects altered, removed or reordered entries; fail-closed (no response is returned if the record cannot be written); role-based access (operator, approver, QA read-only, admin); tool and route allow/deny lists; complete electronic export.</p>
+<p>Customer responsibility: system validation, clock synchronisation, record retention and backup, user management, and audit trail review. Electronic signatures (11.50, 11.70, 11.100, 11.200, 11.300) are out of scope; the approval feature is not an electronic signature.</p>
+</details>
+<details id="2-fda-predicate-rules-and-guidance-21-cfr-58-211-part-11-scope-and-application-2003-data-integrity-qa-2018"><summary>2. FDA predicate rules and guidance (21 CFR 58, 211; Part 11 Scope and Application 2003; Data Integrity Q&amp;A 2018)</summary>
+<p>Requirement: 58.130(e) changes "shall indicate the reason for such change"; Data Integrity Q&amp;A 2018 defines an audit trail as a record that "allows for reconstruction of the course of events" and warns "When login credentials are shared, a unique individual cannot be identified through the login".</p>
+<p>Designed to support: a reason is required on write calls by default (X-Audit-Reason header or reason field); per-person identity through one client certificate per person, or through a user id from an authenticated gateway.</p>
+<p>Customer responsibility: keep reason capture switched on; do not rely on a shared token alone for attribution.</p>
+</details>
+<details id="3-eu-gmp-annex-11-2011-and-the-2025-draft-revision"><summary>3. EU GMP Annex 11 (2011) and the 2025 draft revision</summary>
+<p>Requirement: Annex 11 sec. 9 "For change or deletion of GMP-relevant data the reason should be documented"; 12.4 systems "should be designed to record the identity of operators entering, changing, confirming or deleting data including date and time"; 7.1 "Access to data should be ensured throughout the retention period". The 2025 draft (consultation, not in force) adds who/what/when/why, time zone, audit trail "enabled and locked at all times", and searchable, sortable copies.</p>
+<p>Designed to support: reason on writes, operator identity and UTC time in each record, audit that cannot be switched off (attempts are logged), searchable export for QA.</p>
+<p>Customer responsibility: risk assessment, periodic audit trail review, retention and archive controls, and capturing old and new values in the target system's own audit trail.</p>
+</details>
+<details id="4-oecd-glp-principles-no-1-and-no-17-computerised-systems"><summary>4. OECD GLP Principles (No. 1) and No. 17 Computerised Systems</summary>
+<p>Requirement: No. 17 para 80 "Any change to electronic records must not obscure the original entry and be time and date stamped and traceable to the person who made the change"; para 95 record "the date, time and identity of operators entering, changing, confirming or deleting data"; No. 1 8.3.5 "Reason for changes should be given."</p>
+<p>Designed to support: append-only, time-stamped, attributable records with reason; QA read-only role; admin-only settings; Swiss GLP retention profile (10 years after study completion) with legal hold.</p>
+<p>Customer responsibility: test facility SOPs, archive management, and retaining original and modified data in the target system (No. 17 para 83).</p>
+</details>
+<details id="5-mhra-gxp-data-integrity-2018-and-pics-pi-041-1"><summary>5. MHRA GxP Data Integrity (2018) and PIC/S PI 041-1</summary>
+<p>Requirement: MHRA 6.13 an audit trail records actions "without obscuring or overwriting the original record" and captures "who, what, when and why"; PIC/S 9.6 entries "recorded in true time".</p>
+<p>Designed to support: per-call records written at the time of the call, with identity, action, time and reason.</p>
+<p>Customer responsibility: data governance, ALCOA+ controls across the whole process, and review.</p>
+</details>
+<details id="6-oecd-no-22-data-integrity-who-trs-1033-annex-4-and-the-swiss-glp-ordinance"><summary>6. OECD No. 22 Data Integrity, WHO TRS 1033 Annex 4 and the Swiss GLP Ordinance</summary>
+<p>Requirement: OECD No. 22 6.13 audit trails "should always be switched on during GLP activities", and switching them off and on again "should" be recorded automatically; WHO TRS 1033 Annex 4 11.10 audit trails "should reflect ... users, dates, times, ... changes and reasons for changes ... and enabling and disenabling of audit trails", 11.9 "shared logins or generic user access should not be used"; Swiss GLP Ordinance (SR 813.112.1) Annex 2 sec. 8.3 para 5 audit trails linking changes to persons with a reason, and sec. 10 retention "for at least ten years after study completion".</p>
+<p>Designed to support: a record written when auditing starts; configuration changes recorded; per-person identity via client certificates or an authenticated gateway; reason on writes; a 10-year Swiss GLP retention profile.</p>
+<p>Customer responsibility: individual user accounts, periodic checks that auditing is running, archive and backup. WHO 11.12 and OECD No. 22 6.13 accept add-on audit software as a justified, documented and time-bound measure for systems without their own audit trail, not as a permanent replacement.</p>
+</details>
+<details id="6a-swiss-agit-guidelines-for-the-validation-of-computerised-systems-v40-2025"><summary>6a. Swiss AGIT Guidelines for the Validation of Computerised Systems (V4.0, 2025)</summary>
+<p>AGIT guidance is not legally binding; it interprets the GLP Principles for Swiss test facilities. In a GLP test facility the gateway is itself a computerised system that transfers and stores GLP data, so the customer validates it like any configurable system (AGIT category C). The gateway is designed to support that work: an open OQ test runner, a requirements traceability matrix, a configuration report per regulation, release notes, audit-trail search and export for the audit-trail review SOP, and documented system requirements. Backup and restore, contingency planning and the validation itself remain customer procedures.</p>
+</details>
+<details id="6b-swiss-agit-guidelines-for-the-archiving-of-electronic-raw-data-v30-2026-and-for-the-acquisition-and-processing-of-electronic-raw-data-v30-2025"><summary>6b. Swiss AGIT Guidelines for the Archiving of Electronic Raw Data (V3.0, 2026) and for the Acquisition and Processing of Electronic Raw Data (V3.0, 2025)</summary>
+<p>AGIT guidance is not a legal document. It expects archived electronic raw data and their audit trails to stay complete, unaltered, linked to their metadata and readable for the whole retention period (at least 10 years under the Swiss GLP Ordinance), with an index of archived files, integrity checks at risk-based intervals, tested backups, validated migrations, and disposal only with documented test facility management approval.</p>
+<p>Designed to support: plain-text JSONL records readable with standard tools and an open-source verifier; a hash chain and head file that show whether a log is complete and unaltered; UTC timestamps; a 10-year retention profile, legal hold, and no disposal function in the Community edition. Also in Community 0.4.0: an archive manifest (archive-manifest: file list with sizes, hashes, record ranges and versions); verification of an archived copy against that manifest (verify --manifest) with a dated check report; closing a log segment requires a reason, a ticket and an approver, all recorded; offline runs (verify, export, manifest, report, review) are written to a separate hash-chained run log, checked with verify-run-log, and never append to the live audit log.</p>
+<p>Customer responsibility: the archivist, archive storage on read-only or WORM media, off-site backups, clock synchronisation, control of the gateway configuration, periodic integrity checks, migration and disposal procedures. The gateway records gateway activity; it complements, and does not replace, the data audit trail of the target system.</p>
+</details>
+<details id="7-eu-ai-act-only-for-high-risk-ai-systems"><summary>7. EU AI Act (only for high-risk AI systems)</summary>
+<p>Requirement: Art. 12(1) high-risk AI systems "shall technically allow for the automatic recording of events (logs)"; Art. 19(1) and 26(6) logs kept "of at least six months, unless provided otherwise in applicable Union or national law".</p>
+<p>Designed to support: automatic logs of every tool or API call that a provider or deployer may keep; a 6-month default retention floor. The gateway does not by itself make an AI system meet Art. 12; whether the AI Act applies depends on the customer's system.</p>
+</details>
+<details id="8-gdpr-regulation-eu-2016679"><summary>8. GDPR (Regulation (EU) 2016/679)</summary>
+<p>Every audit record holds personal data (user id and name, client certificate fingerprint, request path, kept headers), whatever the body mode. The body mode is the customer's choice and applies to both MCP and HTTPS traffic: the default hash_only stores only SHA-256 hashes of bodies, while full stores request and response bodies, which may include personal data. A SHA-256 of a short body can be re-identified by guessing, so hash_only is not anonymisation. The customer is the controller and decides the lawful basis, the body mode, retention, and how to answer erasure requests. Records are append-only and hash-chained: removing one breaks verification, so legal retention duties (GDPR Art. 17(3)) and erasure must be weighed by the customer before choosing full mode. The Community edition does not encrypt the log at rest; use disk encryption. A table of the personal data in each record is provided for the customer's record of processing (Art. 30).</p>
+</details>
+<details id="6c-oecd-no-15-archives-no-25-it-security-and-no-17-supplement-1-cloud"><summary>6c. OECD No. 15 (archives), No. 25 (IT security) and No. 17 Supplement 1 (cloud)</summary>
+<p>These OECD advisory documents expect archived electronic records to be locked so they cannot be altered or deleted without detection, transfers documented with a chain of custody, migrations validated, accounts locked after repeated failed sign-ins, backups kept apart from the original data, and controls in cloud settings that the test facility runs independently of the provider.</p>
+<p>Designed to support: a hash chain and head file that make alteration or deletion detectable; verification that the test facility can run itself against a head value it keeps on another system; TLS 1.3 for remote access; recorded failed authentication attempts. Also in Community 0.4.0: an archive manifest with custody records (archive-transfer) and a receipt that is added only when the received package matches (verify --manifest --received-by); an optional limit on repeated failed authentication attempts (listen.auth_failure_limit), off unless configured.</p>
+<p>Customer responsibility: read-only or WORM archive storage, off-site backups of logs and configuration, restore tests, separation of system administration from data ownership, and service agreements with any hosting provider.</p>
+</details>
+<details id="6d-ema-guideline-on-computerised-systems-and-electronic-data-in-clinical-trials-2023-pics-pi-011-3-and-agit-change-management-and-it-service-provider-guidelines"><summary>6d. EMA guideline on computerised systems and electronic data in clinical trials (2023), PIC/S PI 011-3 and AGIT change management and IT service provider guidelines</summary>
+<p>The EMA guideline expects changes to user roles and permissions to be recorded, timestamps to be unambiguous, the audit trail to be exportable as a searchable data file, the generation of data extracts and exports to be traceable, and audit trail review to be risk-based. AGIT expects software upgrades to be impact-assessed against the affected requirements.</p>
+<p>Designed to support: UTC timestamps; recorded configuration at every start; audit-trail search and export. Also in Community 0.4.0: each startup record holds the identities and roles, the body mode and a SHA-256 of the effective configuration, and lists what changed since the previous start (with an optional change reason); a review-by-exception report (review) with JSON, Markdown or CSV output; a record of each offline export and verification run in a separate hash-chained run log; release notes that name the affected requirements and the effect on existing records; and an OQ runner option (--requirement) that repeats only the tests mapped to named requirements.</p>
+<p>The gateway's hash chain is kept on the customer's system. It is not a distributed or independent ledger.</p>
+</details>
+  <details id="coverage-of-this-mapping"><summary>Coverage of this mapping</summary>
+<div class="table-wrap"><table><tr><th>Regulation or guidance</th><th>Status</th></tr><tr><td>21 CFR Part 11</td><td>Analysed</td></tr><tr><td>21 CFR Part 58</td><td>Analysed (record clauses: 58.130(e), 58.190, 58.195)</td></tr><tr><td>21 CFR 211 (record-related)</td><td>Analysed (record clauses: 211.68, 211.180, Subpart J)</td></tr><tr><td>FDA Part 11 Scope and Application (2003)</td><td>Analysed</td></tr><tr><td>FDA Data Integrity Q&amp;A (2018)</td><td>Analysed</td></tr><tr><td>FDA Computer Software Assurance guidance (Feb 2026)</td><td>Analysed (applies to device quality-system software; supporting practice only)</td></tr><tr><td>EU GMP Annex 11 (2011)</td><td>Analysed</td></tr><tr><td>EU GMP Annex 11 draft (2025)</td><td>Analysed (draft, not in force)</td></tr><tr><td>EU GMP Chapter 4</td><td>Analysed (record clauses: 4.9-4.10, retention)</td></tr><tr><td>OECD GLP No. 1</td><td>Analysed (record clauses: 8.3.5, 10)</td></tr><tr><td>OECD GLP No. 17</td><td>Analysed</td></tr><tr><td>OECD GLP No. 22</td><td>Analysed</td></tr><tr><td>PIC/S PI 041-1</td><td>Analysed</td></tr><tr><td>MHRA GxP Data Integrity (2018)</td><td>Analysed</td></tr><tr><td>WHO TRS 1033 Annex 4</td><td>Analysed</td></tr><tr><td>Swiss GLP Ordinance SR 813.112.1</td><td>Analysed (Swissmedic applies EU GMP/PIC/S; no separate computerised-system guideline located)</td></tr><tr><td>ICH E6(R3)</td><td>Analysed (data governance: 4.2.2-4.2.8, 4.3.8; GCP not a target use)</td></tr><tr><td>ISPE GAMP 5 2nd ed.</td><td>Not analysed (paywalled; not regulator text)</td></tr><tr><td>Swiss AGIT CSV V4.0</td><td>Analysed (validation guideline)</td></tr><tr><td>Swiss AGIT Archiving of Electronic Raw Data V3.0</td><td>Analysed</td></tr><tr><td>Swiss AGIT Acquisition and Processing of Electronic Raw Data V3.0</td><td>Analysed</td></tr><tr><td>OECD No. 15, No. 17 Suppl. 1, No. 25</td><td>Analysed</td></tr><tr><td>EMA GCP computerised systems guideline (2023)</td><td>Analysed (main text sec. 4-6.11; sec. 6.12 and Annexes 1-4 not read in detail)</td></tr><tr><td>PIC/S PI 011-3</td><td>Analysed (sections 19-20, audit trail and backup; PI 041 preferred)</td></tr><tr><td>Swiss AGIT IT Service Providers V2.0, Change Management V2.0</td><td>Analysed</td></tr><tr><td>GDPR</td><td>Analysed (Official Journal text, Arts. 4, 5, 17, 25, 30, 32)</td></tr><tr><td>EU AI Act</td><td>Analysed (Official Journal text, Arts. 12, 19, 26(6))</td></tr><tr><td>eIDAS / ZertES, RFC 3161</td><td>Not analysed (out of scope; electronic signatures not provided)</td></tr><tr><td>OECD GLP FAQ</td><td>Not analysed (not obtained)</td></tr></table></div>
+<p>This page describes design intent. It is not legal advice and it is not a third-party approval of the product.</p>
+  </details>
+</div></section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="sub">Three steps, no changes to your target systems.</p>
+  <div class="flow"><span>Clients, AI assistants, gateways</span><i>&rarr;</i><span class="hl">GxP Gateway Audit (MCP / HTTPS, always TLS)</span><i>&rarr;</i><span>MCP servers, APIs, LLM endpoints</span></div>
+  <div class="grid">
+    <div class="card"><div class="icon">1. CONNECT</div><h3>Point clients at the proxy</h3><p>Only the base URL changes. Authentication by mTLS and/or token.</p></div>
+    <div class="card"><div class="icon">2. RECORD</div><h3>Every call is written to the trail</h3><p>Who, what, when and why, with the request body stored the way you choose: hash only (default), redacted or full.</p></div>
+    <div class="card"><div class="icon">3. VERIFY</div><h3>Check and review at any time</h3><p>If a record is deleted or the chain is broken, it stops and alerts, saying which record and when. Review and archive tools help QA.</p></div>
+  </div>
+  <details><summary>Technical details (for IT and validation teams)</summary>
+    <ul>
+      <li>Audits MCP and HTTPS channels, six flows: <code>mcp2mcp</code>, <code>mcp2api</code>, <code>api2mcp</code>, <code>api2api</code>, <code>mcp2llm</code>, <code>api2llm</code>.</li>
+      <li>Reverse proxy, always TLS; authentication by mTLS and/or token.</li>
+      <li>Every record is RFC 8785 canonical JSON, hash-chained with SHA-256 (audit schema 1.3.0). Fail-closed hash chain with alerts.</li>
+      <li>Optional human approval: an approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call.</li>
+      <li>Body storage: hash only (default), redacted or full.</li>
+      <li>Archive manifests, a review command, and a hash-chained run log for offline runs.</li>
+      <li>Offline regulatory report: lists regulations by type and country, says for each whether your current configuration supports it and names the parameter to change if it does not; it writes its own hash-chained run log.</li>
+      <li>Open traceability matrix and OQ runner. 240 automated tests.</li>
+    </ul>
+    <p>These materials support your own validation process; your organisation remains responsible for validating its use.</p>
+  </details>
+</section>
+
+<section id="compare" class="alt"><div class="inner">
   <h2>Community vs Pro</h2>
-  <table>
+  <p class="sub">Start free with Community. Pro is the paid edition for larger deployments, <strong>demo on request</strong>.</p>
+  <div class="grid" style="margin-bottom:28px">
+    <div class="card"><span class="badge s-community">Community</span><h3>Free, MIT, available now (v0.4.0)</h3><ul class="check"><li>Hash chain, RFC 8785 canonical records</li><li>Approvals, reasons and roles</li><li>TLS 1.3 / mTLS, body storage modes</li><li>Regulatory report, archive manifest, run log</li><li>Open OQ runner and traceability matrix</li></ul><div class="actions"><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a></div></div>
+    <div class="card"><span class="badge s-pro">Pro</span><h3>Paid edition, demo on request</h3><ul class="check"><li>Ed25519/ECDSA record signing and signed checkpoints</li><li>RFC 3161 timestamps, signed archive manifests</li><li>PostgreSQL and SQL Server stores</li><li>S3 Object Lock (WORM), KMS/HSM, syslog</li><li>Review flags and sign-off, PDF/CSV reports</li><li>Full IQ/OQ validation pack, SSO/OAuth</li></ul><div class="actions"><a class="btn primary" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></div></div>
+  </div>
+  <div class="table-wrap"><table>
     <tr><th>Capability</th><th>Community: free, MIT, available now (v0.4.0)</th><th>Pro: demo on request</th></tr>
     <tr><td>Channels</td><td>MCP and HTTPS: mcp2mcp, mcp2api, api2mcp, api2api, mcp2llm, api2llm</td><td>Yes</td></tr>
     <tr><td>Reverse proxy, TLS, mTLS and/or token auth</td><td>Yes</td><td>Yes</td></tr>
@@ -90,32 +220,20 @@ code{color:#F147FF}
     <tr><td>Audit storage</td><td>JSONL</td><td>PostgreSQL and SQL Server stores</td></tr>
     <tr><td>Body storage</td><td>Hash only (default), redacted or full</td><td>Yes</td></tr>
     <tr><td>Review &amp; archive</td><td>Review command, archive manifests, hash-chained run log for offline runs</td><td>+ WORM archiving to S3 Object Lock, SIEM</td></tr>
-    <tr><td>Regulatory report</td><td>Offline command (see below)</td><td>+ reports</td></tr>
+    <tr><td>Regulatory report</td><td>Offline command</td><td>+ reports</td></tr>
     <tr><td>Validation</td><td>Open traceability matrix and OQ runner</td><td>Full IQ/OQ validation pack</td></tr>
     <tr><td>Enterprise</td><td>&mdash;</td><td>SSO, approvals</td></tr>
     <tr><td>Tests</td><td>240 automated tests</td><td>&mdash;</td></tr>
-    <tr><td>Flyer</td><td><a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
-    <tr><td>Hello-world guides</td><td>Step by step: <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-stdio.md">stdio → proxy → stdio</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-https.md">stdio → proxy → HTTPS</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/https-gateway.md">HTTPS gateway</a></td><td>&mdash;</td></tr>
-    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/releases/tag/v0.4.0">Release v0.4.0</a> / <a class="em" href="https://registry.modelcontextprotocol.io/v0/servers?search=io.github.antonio-castellon/mcp-glp-audit-proxy">MCP Registry</a></td><td>Paid edition, demo on request: <a class="em" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></td></tr>
-  </table>
-</section>
-
-<section id="report">
-  <h2>Offline regulatory report</h2>
-  <ul>
-    <li>An offline command lists regulations by type and country.</li>
-    <li>For each one it says whether your current configuration supports it, and names the parameter to change if it does not.</li>
-    <li>It runs offline and writes its own hash-chained run log.</li>
-  </ul>
-  <p>Community includes an open traceability matrix and OQ runner; the full IQ/OQ validation pack is part of Pro. JSONL in Community; PostgreSQL and SQL Server stores in Pro. WORM archiving to S3 Object Lock in Pro.</p>
-  <p>These materials support your own validation process; your organisation remains responsible for validating its use.</p>
-</section>
+    <tr><td>Flyer</td><td><a href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a href="/downloads/flyers/gxp-gateway-audit-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
+    <tr><td>Hello-world guides</td><td>Step by step: <a href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-stdio.md">stdio → proxy → stdio</a> / <a href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-https.md">stdio → proxy → HTTPS</a> / <a href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/https-gateway.md">HTTPS gateway</a></td><td>&mdash;</td></tr>
+    <tr><td>How to get it</td><td><a href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a> / <a href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a> / <a href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/releases/tag/v0.4.0">Release v0.4.0</a> / <a href="https://registry.modelcontextprotocol.io/v0/servers?search=io.github.antonio-castellon/mcp-glp-audit-proxy">MCP Registry</a></td><td>Paid edition, demo on request: <a href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></td></tr>
+  </table></div>
+</div></section>
 
 <section class="cta">
   <h2>See it on your stack</h2>
-  <p>A short demo on one workflow with the tools you already own.</p>
-  <a class="btn" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20demo%20request">Request a demo</a>
-  <a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a>
+  <p class="sub">A short demo on one workflow with the tools you already own.</p>
+  <div class="actions"><a class="btn primary" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20demo%20request">Request a demo</a><a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></div>
 </section>
 
 <section id="contact">
@@ -126,10 +244,17 @@ code{color:#F147FF}
     <input name="email" type="email" placeholder="Email" required>
     <select name="interest"><option>Demo</option><option>Pro (demo on request)</option><option>Other</option></select>
     <textarea name="message" rows="5" placeholder="Your systems, APIs and use case"></textarea>
-    <button class="btn" type="submit">Send via email</button>
+    <button class="btn primary" type="submit">Send via email</button>
   </form>
 </section>
 
-<p class="disclaimer">GxP Gateway Audit (package mcp-glp-audit-proxy) is designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows and complements your systems' own audit trail. It does not by itself guarantee regulatory compliance and does not replace the validation of your systems, which remains the responsibility of the user organisation.<br>&copy; Antonio Castellon &middot; <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
+<p class="disclaimer">GxP Gateway Audit (package mcp-glp-audit-proxy) is designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows and complements your systems' own audit trail. It does not by itself guarantee regulatory compliance and does not replace the validation of your systems, which remains the responsibility of the user organisation. This page describes design intent. It is not legal advice and it is not a third-party approval of the product.<br>&copy; Antonio Castellon &middot; <a href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.filters button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+ var f=b.getAttribute('data-f');document.querySelectorAll('#regcards .reg').forEach(function(c){c.style.display=(f==='all'||c.getAttribute('data-s')===f)?'':'none'})})});
+function openHash(){var el=location.hash&&document.getElementById(location.hash.slice(1));if(el&&el.tagName==='DETAILS'){el.open=true;el.scrollIntoView()}}
+window.addEventListener('hashchange',openHash);openHash();
+</script>
 </body>
 </html>
