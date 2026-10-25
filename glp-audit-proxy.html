@@ -74,7 +74,7 @@ code{color:#F147FF}
   <p style="text-align:center">Clients &rarr; <span class="em">GxP Gateway Audit</span> (MCP / HTTPS, always TLS) &rarr; MCP servers, APIs, gateways, LLM endpoints</p><br>
   <div class="steps">
     <div class="step"><h3>1. Connect</h3><p>It runs as a reverse proxy: the client only changes its base URL. Supported flows: <code>mcp2mcp</code>, <code>mcp2api</code>, <code>api2mcp</code>, <code>api2api</code>, <code>mcp2llm</code>, <code>api2llm</code>. Always TLS; authentication by mTLS and/or token.</p></div>
-    <div class="step"><h3>2. Record</h3><p>Every call is appended to a hash-chained audit trail (audit schema 1.3.0). You choose how bodies are stored: hash only (default), redacted or full.</p></div>
+    <div class="step"><h3>2. Record</h3><p>Every call is appended to a hash-chained audit trail (audit schema 1.3.0). Every record is RFC 8785 canonical JSON, hash-chained with SHA-256. Optional human approval: an approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call. You choose how bodies are stored: hash only (default), redacted or full.</p></div>
     <div class="step"><h3>3. Fail closed &amp; verify</h3><p>If a record is deleted or the chain is broken, it stops and alerts, saying which record and when. Archive manifests and a review command help you check the trail; offline runs keep their own hash-chained run log.</p></div>
   </div>
 </section>
@@ -85,15 +85,18 @@ code{color:#F147FF}
     <tr><th>Capability</th><th>Community: free, MIT, available now (v0.4.0)</th><th>Pro: demo on request</th></tr>
     <tr><td>Channels</td><td>MCP and HTTPS: mcp2mcp, mcp2api, api2mcp, api2api, mcp2llm, api2llm</td><td>Yes</td></tr>
     <tr><td>Reverse proxy, TLS, mTLS and/or token auth</td><td>Yes</td><td>Yes</td></tr>
-    <tr><td>Audit trail</td><td>Tamper-evident, fail-closed hash chain (schema 1.3.0)</td><td>+ signed records</td></tr>
+    <tr><td>Audit trail</td><td>Tamper-evident, fail-closed hash chain (schema 1.3.0). Every record is RFC 8785 canonical JSON, hash-chained with SHA-256.</td><td>+ signed records</td></tr>
+    <tr><td>Optional human approval</td><td>An approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call.</td><td>Yes</td></tr>
+    <tr><td>Audit storage</td><td>JSONL</td><td>PostgreSQL and SQL Server stores</td></tr>
     <tr><td>Body storage</td><td>Hash only (default), redacted or full</td><td>Yes</td></tr>
-    <tr><td>Review &amp; archive</td><td>Review command, archive manifests, hash-chained run log for offline runs</td><td>+ WORM storage, SIEM</td></tr>
+    <tr><td>Review &amp; archive</td><td>Review command, archive manifests, hash-chained run log for offline runs</td><td>+ WORM archiving to S3 Object Lock, SIEM</td></tr>
     <tr><td>Regulatory report</td><td>Offline command (see below)</td><td>+ reports</td></tr>
-    <tr><td>Enterprise</td><td>&mdash;</td><td>SSO, approvals, IQ/OQ validation pack</td></tr>
+    <tr><td>Validation</td><td>Open traceability matrix and OQ runner</td><td>Full IQ/OQ validation pack</td></tr>
+    <tr><td>Enterprise</td><td>&mdash;</td><td>SSO, approvals</td></tr>
     <tr><td>Tests</td><td>240 automated tests</td><td>&mdash;</td></tr>
     <tr><td>Flyer</td><td><a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
     <tr><td>Hello-world guides</td><td>Step by step: <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-stdio.md">stdio → proxy → stdio</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-https.md">stdio → proxy → HTTPS</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/https-gateway.md">HTTPS gateway</a></td><td>&mdash;</td></tr>
-    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/releases/tag/v0.4.0">Release v0.4.0</a></td><td>Paid edition, demo on request: <a class="em" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></td></tr>
+    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/releases/tag/v0.4.0">Release v0.4.0</a> / <a class="em" href="https://registry.modelcontextprotocol.io/v0/servers?search=io.github.antonio-castellon/mcp-glp-audit-proxy">MCP Registry</a></td><td>Paid edition, demo on request: <a class="em" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></td></tr>
   </table>
 </section>
 
@@ -104,6 +107,7 @@ code{color:#F147FF}
     <li>For each one it says whether your current configuration supports it, and names the parameter to change if it does not.</li>
     <li>It runs offline and writes its own hash-chained run log.</li>
   </ul>
+  <p>Community includes an open traceability matrix and OQ runner; the full IQ/OQ validation pack is part of Pro. JSONL in Community; PostgreSQL and SQL Server stores in Pro. WORM archiving to S3 Object Lock in Pro.</p>
   <p>These materials support your own validation process; your organisation remains responsible for validating its use.</p>
 </section>
 
