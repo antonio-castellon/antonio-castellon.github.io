@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="mcp-glp-audit-proxy: a control layer between AI agents and lab systems, with a tamper-evident audit trail. Designed to support GLP / 21 CFR Part 11 / EU GMP Annex 11 workflows.">
+<meta name="description" content="GxP Gateway Audit (package mcp-glp-audit-proxy): a self-hosted reverse proxy that keeps a tamper-evident, fail-closed audit trail of MCP, API and LLM calls over TLS. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.">
 <meta name="author" content="Antonio Castellon">
-<title>mcp-glp-audit-proxy :: A-Team :: Antonio Castellon</title>
-<link rel="shortcut icon" type="image/png" href="/assets/animations/furgo_jumping.png" />
+<title>GxP Gateway Audit :: A-Team :: Antonio Castellon</title>
 <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 <style>
 @font-face{font-family:'kongtext';src:url('/assets/fonts/kongtext.ttf');font-display:swap}
@@ -39,78 +38,98 @@ button{cursor:pointer;background:transparent}
 .disclaimer{font-size:13px;color:#ccc;text-align:center;padding:30px 2rem;border-top:1px solid #333}
 code{color:#F147FF}
 </style>
+  <link rel="canonical" href="https://castellon.ch/glp-audit-proxy">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://castellon.ch/glp-audit-proxy">
+  <meta property="og:title" content="GxP Gateway Audit :: A-Team :: Antonio Castellon">
+  <meta property="og:description" content="GxP Gateway Audit (package mcp-glp-audit-proxy): a self-hosted reverse proxy that keeps a tamper-evident, fail-closed audit trail of MCP, API and LLM calls over TLS. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.">
+  <meta property="og:image" content="https://castellon.ch/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@aj_castellon">
+  <meta name="twitter:title" content="GxP Gateway Audit :: A-Team :: Antonio Castellon">
+  <meta name="twitter:description" content="GxP Gateway Audit (package mcp-glp-audit-proxy): a self-hosted reverse proxy that keeps a tamper-evident, fail-closed audit trail of MCP, API and LLM calls over TLS. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.">
+  <meta name="twitter:image" content="https://castellon.ch/assets/images/og-image.jpg">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GxP Gateway Audit", "applicationCategory": "DeveloperApplication", "url": "https://castellon.ch/glp-audit-proxy", "description": "Self-hosted reverse proxy that keeps a tamper-evident, fail-closed audit trail of MCP, API and LLM calls over TLS. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.", "license": "https://opensource.org/licenses/MIT", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF", "description": "Community edition, free, MIT"}, "author": {"@type": "Person", "@id": "https://castellon.ch/#antonio", "name": "Antonio Castellon", "url": "https://castellon.ch/", "sameAs": ["https://ch.linkedin.com/in/antoniocastellon", "https://x.com/aj_castellon", "https://github.com/antonio-castellon"]}, "alternateName": "mcp-glp-audit-proxy", "softwareVersion": "0.4.0", "downloadUrl": "https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/"}</script>
 </head>
 <body>
 <nav class="navbar">
   <a class="brand" href="/">A-TEAM</a>
-  <div><a href="#how">How</a><a href="#compare">Editions</a><a href="#validation">Validation</a><a href="#contact">Contact</a></div>
+  <div><a href="#how">How</a><a href="#compare">Editions</a><a href="#report">Reports</a><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero">
-  <p class="kicker">MCP-GLP-AUDIT-PROXY</p>
-  <h1>Your AI agents touch lab systems.<br><span class="em">Who keeps the audit trail?</span></h1>
-  <p class="lead">AI agents can now read and write in the tools your lab already owns. Without a record of who did what, when, and through which AI tool, that is a data-integrity gap.
-  mcp-glp-audit-proxy is the <span class="em">control layer</span> between the AI brain and your tools: every tool call is checked, optionally approved, and logged in a tamper-evident chain.</p>
+  <p class="kicker">GXP GATEWAY AUDIT</p>
+  <h1>Your AI, APIs and gateways touch lab systems.<br><span class="em">Who keeps the audit trail?</span></h1>
+  <p class="lead">GxP Gateway Audit (package <code>mcp-glp-audit-proxy</code>) is a self-hosted reverse proxy between your clients and the systems they call. It audits MCP and HTTPS channels: MCP tools, APIs, gateways and LLM calls. Every call goes into a <span class="em">tamper-evident, fail-closed</span> hash-chained audit trail, as a complement to your systems' own audit trail. Designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows.</p>
   <p><a class="btn" href="#contact">Request a demo</a></p>
-  <p><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a><a class="btn" href="/downloads/flyers/mcp-glp-audit-proxy-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></p>
+  <p><a class="btn" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a><a class="btn" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a><a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></p>
 </header>
 
 <section id="how">
   <h2>How it works</h2>
-  <p style="text-align:center">AI brain &rarr; <span class="em">control layer</span> &rarr; tools you already own</p><br>
+  <p style="text-align:center">Clients &rarr; <span class="em">GxP Gateway Audit</span> (MCP / HTTPS, always TLS) &rarr; MCP servers, APIs, gateways, LLM endpoints</p><br>
   <div class="steps">
-    <div class="step"><h3>1. Intercept</h3><p>The proxy sits between your MCP client (the AI agent) and your MCP servers. Every tool call passes through it.</p></div>
-    <div class="step"><h3>2. Control</h3><p>An allow/denylist decides what may run. Write operations can require human approval (<code>glp_approve</code>). If something is wrong, it fails closed: the call is blocked, not let through.</p></div>
-    <div class="step"><h3>3. Record &amp; verify</h3><p>Each call is appended to a JSONL hash chain (RFC 8785 canonical JSON + SHA-256). The verify CLI detects any tampering, and <code>--print-head</code> lets you anchor the chain head externally.</p></div>
+    <div class="step"><h3>1. Connect</h3><p>It runs as a reverse proxy: the client only changes its base URL. Supported flows: <code>mcp2mcp</code>, <code>mcp2api</code>, <code>api2mcp</code>, <code>api2api</code>, <code>mcp2llm</code>, <code>api2llm</code>. Always TLS; authentication by mTLS and/or token.</p></div>
+    <div class="step"><h3>2. Record</h3><p>Every call is appended to a hash-chained audit trail (audit schema 1.3.0). Every record is RFC 8785 canonical JSON, hash-chained with SHA-256. Optional human approval: an approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call. You choose how bodies are stored: hash only (default), redacted or full.</p></div>
+    <div class="step"><h3>3. Fail closed &amp; verify</h3><p>If a record is deleted or the chain is broken, it stops and alerts, saying which record and when. Archive manifests and a review command help you check the trail; offline runs keep their own hash-chained run log.</p></div>
   </div>
 </section>
 
 <section id="compare">
   <h2>Community vs Pro</h2>
   <table>
-    <tr><th>Capability</th><th>Community: free, MIT, available now (v0.3.2)</th><th>Pro: demo on request</th></tr>
-    <tr><td>MCP proxy, allow/denylist, fail-closed</td><td>Yes</td><td>Yes</td></tr>
-    <tr><td>Optional human approval for writes</td><td>Yes (glp_approve)</td><td>Yes</td></tr>
-    <tr><td>Audit storage</td><td>Tamper-evident JSONL hash chain</td><td>+ SQL/MSSQL and S3 Object Lock storage</td></tr>
-    <tr><td>Integrity proofs</td><td>SHA-256 chain, verify CLI, --print-head</td><td>Same as Community</td></tr>
-    <tr><td>Before/after values</td><td>&mdash;</td><td>Yes</td></tr>
-    <tr><td>Reports</td><td>RTM + sample OQ report</td><td>+ PDF/CSV reports, IQ/OQ validation pack</td></tr>
-    <tr><td>Flyer</td><td><a class="em" href="/downloads/flyers/mcp-glp-audit-proxy-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a class="em" href="/downloads/flyers/mcp-glp-audit-proxy-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
-    <tr><td>Hello-world guides</td><td>Step by step, with screenshots: <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-stdio.md">stdio → proxy → stdio</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-https.md">stdio → proxy → HTTPS</a></td><td>&mdash;</td></tr>
-    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a></td><td>Demo on request: <a class="em" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20Pro%20demo">Request a Pro demo</a></td></tr>
+    <tr><th>Capability</th><th>Community: free, MIT, available now (v0.4.0)</th><th>Pro: demo on request</th></tr>
+    <tr><td>Channels</td><td>MCP and HTTPS: mcp2mcp, mcp2api, api2mcp, api2api, mcp2llm, api2llm</td><td>Yes</td></tr>
+    <tr><td>Reverse proxy, TLS, mTLS and/or token auth</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Audit trail</td><td>Tamper-evident, fail-closed hash chain (schema 1.3.0). Every record is RFC 8785 canonical JSON, hash-chained with SHA-256.</td><td>+ signed records</td></tr>
+    <tr><td>Optional human approval</td><td>An approver records approved, reviewed or rejected with <code>glp_approve</code> (MCP) or <code>POST /_glp/approve</code> (HTTPS); only approved authorises the call.</td><td>Yes</td></tr>
+    <tr><td>Audit storage</td><td>JSONL</td><td>PostgreSQL and SQL Server stores</td></tr>
+    <tr><td>Body storage</td><td>Hash only (default), redacted or full</td><td>Yes</td></tr>
+    <tr><td>Review &amp; archive</td><td>Review command, archive manifests, hash-chained run log for offline runs</td><td>+ WORM archiving to S3 Object Lock, SIEM</td></tr>
+    <tr><td>Regulatory report</td><td>Offline command (see below)</td><td>+ reports</td></tr>
+    <tr><td>Validation</td><td>Open traceability matrix and OQ runner</td><td>Full IQ/OQ validation pack</td></tr>
+    <tr><td>Enterprise</td><td>&mdash;</td><td>SSO, approvals</td></tr>
+    <tr><td>Tests</td><td>240 automated tests</td><td>&mdash;</td></tr>
+    <tr><td>Flyer</td><td><a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF, EN)</a> &middot; <a class="em" href="/downloads/flyers/gxp-gateway-audit-flyer-es.pdf" target="_blank" rel="noopener">ES</a></td><td>&mdash;</td></tr>
+    <tr><td>Hello-world guides</td><td>Step by step: <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-stdio.md">stdio → proxy → stdio</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/stdio-to-proxy-to-https.md">stdio → proxy → HTTPS</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/blob/main/docs/manual-guides/hello_world/https-gateway.md">HTTPS gateway</a></td><td>&mdash;</td></tr>
+    <tr><td>How to get it</td><td><a class="em" href="https://pypi.org/project/mcp-glp-audit-proxy/0.4.0/">PyPI</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy">GitHub</a> / <a class="em" href="https://github.com/antonio-castellon/mcp-glp-audit-proxy/releases/tag/v0.4.0">Release v0.4.0</a> / <a class="em" href="https://registry.modelcontextprotocol.io/v0/servers?search=io.github.antonio-castellon/mcp-glp-audit-proxy">MCP Registry</a></td><td>Paid edition, demo on request: <a class="em" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20Pro%20demo">Request a Pro demo</a></td></tr>
   </table>
 </section>
 
-<section id="validation">
-  <h2>Validation pack</h2>
+<section id="report">
+  <h2>Offline regulatory report</h2>
   <ul>
-    <li><span class="em">RTM</span>: a requirements traceability matrix mapping requirements to tests (91 automated tests in Community).</li>
-    <li><span class="em">Sample OQ report</span>: a starting point for your own operational qualification.</li>
-    <li><span class="em">verify CLI</span>: re-checks the whole hash chain; <code>--print-head</code> prints the chain head for external anchoring.</li>
-    <li><span class="em">Pro (demo on request): IQ/OQ validation pack</span>: installation and operational qualification documentation, plus PDF/CSV reports.</li>
+    <li>An offline command lists regulations by type and country.</li>
+    <li>For each one it says whether your current configuration supports it, and names the parameter to change if it does not.</li>
+    <li>It runs offline and writes its own hash-chained run log.</li>
   </ul>
-  <p>These materials support your CSV process; your organisation remains responsible for validating its own use.</p>
+  <p>Community includes an open traceability matrix and OQ runner; the full IQ/OQ validation pack is part of Pro. JSONL in Community; PostgreSQL and SQL Server stores in Pro. WORM archiving to S3 Object Lock in Pro.</p>
+  <p>These materials support your own validation process; your organisation remains responsible for validating its use.</p>
 </section>
 
 <section class="cta">
   <h2>See it on your stack</h2>
   <p>A short demo on one workflow with the tools you already own.</p>
-  <a class="btn" href="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20demo%20request">Request a demo</a>
-  <a class="btn" href="/downloads/flyers/mcp-glp-audit-proxy-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a>
+  <a class="btn" href="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20demo%20request">Request a demo</a>
+  <a class="btn" href="/downloads/flyers/gxp-gateway-audit-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <form action="mailto:antonio@castellon.ch?subject=mcp-glp-audit-proxy%20enquiry" method="post" enctype="text/plain">
+  <form action="mailto:antonio@castellon.ch?subject=GxP%20Gateway%20Audit%20enquiry" method="post" enctype="text/plain">
     <input name="name" placeholder="Name" required>
     <input name="company" placeholder="Company">
     <input name="email" type="email" placeholder="Email" required>
     <select name="interest"><option>Demo</option><option>Pro (demo on request)</option><option>Other</option></select>
-    <textarea name="message" rows="5" placeholder="Your lab systems and use case"></textarea>
+    <textarea name="message" rows="5" placeholder="Your systems, APIs and use case"></textarea>
     <button class="btn" type="submit">Send via email</button>
   </form>
 </section>
 
-<p class="disclaimer">mcp-glp-audit-proxy is designed to support GLP / 21 CFR Part 11 / EU GMP Annex 11 workflows. It does not by itself make a system compliant; validation of each use remains the responsibility of the user organisation.<br>&copy; Antonio Castellon &middot; <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
+<p class="disclaimer">GxP Gateway Audit (package mcp-glp-audit-proxy) is designed to support GLP/GxP, 21 CFR Part 11 and EU GMP Annex 11 workflows and complements your systems' own audit trail. It does not by itself guarantee regulatory compliance and does not replace the validation of your systems, which remains the responsibility of the user organisation.<br>&copy; Antonio Castellon &middot; <a class="em" href="mailto:antonio@castellon.ch">antonio@castellon.ch</a></p>
 </body>
 </html>
