@@ -41,12 +41,12 @@
 
 <section id="benefits">
   <h2>What you get</h2>
-  <p class="sub">Your teams keep the AI tools they already use. Lab, study, research, teaching and administrative documents contain names, dates, contact details, AHV/AVS numbers and health information: Anonimator keeps those identities at home.</p>
+  <p class="sub">Your teams keep the AI tools they already use. Lab, study, research, teaching, legal and administrative documents contain names, dates, contact details and AHV/AVS numbers: Anonimator keeps those identities at home. For labs, universities, law firms and in-house legal teams.</p>
   <div class="grid">
     <div class="card"><div class="icon">01</div><h3>Identities stay with you</h3><p>The cloud AI only sees placeholders; the real data is put back into the answer.</p></div>
     <div class="card"><div class="icon">02</div><h3>The key stays with you</h3><p>Mapping only in memory, on premises, destroyed after each query.</p></div>
-    <div class="card"><div class="icon">03</div><h3>Nothing leaves unchecked</h3><p>Fail-closed by design: if it can't check, nothing is sent.</p></div>
-    <div class="card"><div class="icon">04</div><h3>Health data and minors</h3><p>Purpose-aware policies; special-category data and minors' data are always pseudonymised.</p></div>
+    <div class="card"><div class="icon">03</div><h3>Nothing leaves unchecked</h3><p>A local gateway checks every outgoing prompt and blocks it if any identifying data remains.</p></div>
+    <div class="card"><div class="icon">04</div><h3>Pseudonymised by default</h3><p>Names, IDs, contacts and full dates are pseudonymised by default. Configurable policies for special categories (health, minors): domain packs on the roadmap.</p></div>
     <div class="card"><div class="icon">05</div><h3>Audit without personal data</h3><p>Oversight with counts and hashes only, without creating new records of identities.</p></div>
     <div class="card"><div class="icon">06</div><h3>Your formats, five languages</h3><p>Word, Excel, PowerPoint, PDF, text (ODF, CSV, RTF, HTML, email, OCR optional). ES, DE, FR, IT, EN.</p></div>
   </div>
@@ -56,16 +56,16 @@
   <h2>Data protection and AI rules</h2>
   <p class="sub">Designed to support data minimisation, pseudonymisation and privacy by design under the GDPR (Art. 4(5), 5, 25, 32) and the Swiss revFADP (Art. 6&ndash;8), and responsible use of AI under the EU AI Act.</p>
   <div class="grid">
-    <div class="card reg s-ok"><span class="badge s-ok">EU</span><h3>GDPR</h3><span class="meta">Art. 4(5), 5, 8, 9, 25, 30, 32, 44&ndash;46</span><p>Pseudonymisation, data minimisation, privacy by design and security of processing, with strict rules for special categories and children, and PII-free accountability evidence.</p></div>
+    <div class="card reg s-ok"><span class="badge s-ok">EU</span><h3>GDPR</h3><span class="meta">Art. 4(5), 5, 8, 9, 25, 30, 32, 44&ndash;46</span><p>Pseudonymisation, data minimisation, privacy by design and security of processing, and PII-free accountability evidence. Policies for special categories and children: domain packs on the roadmap.</p></div>
     <div class="card reg s-ok"><span class="badge s-ok">Switzerland</span><h3>Swiss revFADP (nDSG)</h3><span class="meta">Art. 6, 7, 8, 16</span><p>Proportionality, privacy by design and by default, data security, and a supporting measure for cross-border disclosure. Runs entirely on Swiss/customer premises.</p></div>
     <div class="card reg s-ok"><span class="badge s-ok">EU</span><h3>EU AI Act (responsible use)</h3><span class="meta">Art. 4; Art. 10 only for high-risk systems</span><p>Central policy for what data may reach external AI tools, enforced in the browser and API, with PII-free audit evidence.</p></div>
   </div>
   <h3 style="margin-top:40px;text-align:center">How Anonimator supports each requirement</h3>
   <div class="table-wrap"><table>
     <tr><th>Regulation</th><th>Article / requirement</th><th>How Anonimator supports it</th></tr>
-    <tr><td>EU GDPR</td><td>Art. 4(5) pseudonymisation; Art. 5(1)(c) data minimisation; Art. 25 data protection by design and by default; Art. 32 security of processing</td><td>Detects personal data on-premises and replaces it with typed placeholders before any prompt leaves the network; key kept in RAM only, per query, then destroyed; purpose-based keep/generalise/redact policies; fail-closed leak check before egress</td></tr>
+    <tr><td>EU GDPR</td><td>Art. 4(5) pseudonymisation; Art. 5(1)(c) data minimisation; Art. 25 data protection by design and by default; Art. 32 security of processing</td><td>Detects personal data on-premises and replaces it with typed placeholders before any prompt leaves the network; key kept in RAM only, per query, then destroyed; purpose-based keep/generalise/redact policies; the local gateway checks every outgoing prompt and blocks it if any identifying data remains</td></tr>
     <tr><td>EU GDPR</td><td>Art. 44&ndash;46 international transfers (supporting measure)</td><td>The external AI provider receives only pseudonymised text; the re-identification key never leaves your premises (supplementary technical measure, not a substitute for a transfer mechanism)</td></tr>
-    <tr><td>EU GDPR</td><td>Art. 9 special categories; Art. 8 / Recital 38 children</td><td>Special-category data and minors' data are always pseudonymised; users cannot relax these rules</td></tr>
+    <tr><td>EU GDPR</td><td>Art. 9 special categories; Art. 8 / Recital 38 children</td><td>Personal identifiers (names, IDs, contacts, full dates) are pseudonymised by default, also in documents about minors. Configurable policies for special categories such as health data: domain packs on the roadmap</td></tr>
     <tr><td>EU GDPR</td><td>Art. 30 / accountability, Art. 5(2)</td><td>Audit trail without personal data (counts and hashes only, hash-chained)</td></tr>
     <tr><td>Swiss revFADP / nDSG</td><td>Art. 6 principles (proportionality, purpose), Art. 7 privacy by design and by default, Art. 8 data security, Art. 16 cross-border disclosure (supporting measure)</td><td>Same mechanisms as above; runs entirely on Swiss/customer premises, no cloud component</td></tr>
     <tr><td>EU AI Act</td><td>Art. 4 AI literacy and responsible use of general-purpose AI by staff; Art. 10 data governance (only if the customer builds high-risk systems)</td><td>Central admin policy for what data may reach external AI tools, enforced in the browser and API; PII-free audit evidence</td></tr>
@@ -78,10 +78,10 @@
   <div class="flow"><span>Your people</span><i>&rarr;</i><span class="hl">Anonimator (on your premises)</span><i>&rarr;</i><span>Cloud AI</span></div>
   <div class="grid">
     <div class="card"><div class="icon">1. WORK AS USUAL</div><h3>Same tools</h3><p>Requests to ChatGPT, Claude or Copilot go through Anonimator, an OpenAI-compatible proxy on your premises.</p></div>
-    <div class="card"><div class="icon">2. PLACEHOLDERS</div><h3>Identities are replaced</h3><p>Names, emails, phone numbers, IBAN, AHV/AVS, DNI/NIE, dates and plates: <code>Anna Meier &rarr; [PERSON_7f3a]</code>. If Anonimator can't check, nothing is sent.</p></div>
+    <div class="card"><div class="icon">2. PLACEHOLDERS</div><h3>Identities are replaced</h3><p>Names, emails, phone numbers, IBAN, AHV/AVS, DNI/NIE, dates and plates: <code>Anna Meier &rarr; [PERSON_7f3a]</code>. If identifying data remains, the gateway blocks the request.</p></div>
     <div class="card"><div class="icon">3. RESTORED</div><h3>Real data back in the answer</h3><p>The cloud AI answers with placeholders; Anonimator puts the real data back. The key is then destroyed.</p></div>
   </div>
-  <details><summary>Technical details (for IT teams)</summary><ul><li>On-premise, standard CPUs, no GPU needed. OpenAI-compatible proxy.</li><li>Per-query, RAM-only mapping, destroyed after each query.</li><li>Fail-closed leak check before egress.</li><li>Audit trail with counts and hashes only, hash-chained.</li></ul></details>
+  <details><summary>Technical details (for IT teams)</summary><ul><li>On-premise, standard CPUs, no GPU needed. OpenAI-compatible proxy.</li><li>Per-query, RAM-only mapping, destroyed after each query.</li><li>Fail-closed leak check in the local gateway: every outgoing prompt is checked, and blocked if identifying data remains.</li><li>Audit trail with counts and hashes only, hash-chained.</li></ul></details>
 </section>
 
 <section id="differs">
@@ -114,7 +114,7 @@
 
 <section class="cta">
   <h2>See it on your documents</h2>
-  <p class="sub">Get in touch to request a demo of Anonimator for your organisation in Switzerland or the EU.</p>
+  <p class="sub">Get in touch to request a demo of Anonimator for your lab, university, law firm or legal team in Switzerland or the EU.</p>
   <div class="actions"><a class="btn primary" href="mailto:info@castellon.ch?subject=Anonimator%20demo%20request">Request a demo</a><a class="btn" href="/downloads/flyers/anonimator-flyer-en.pdf" target="_blank" rel="noopener">Download flyer (PDF)</a></div>
 </section>
 
