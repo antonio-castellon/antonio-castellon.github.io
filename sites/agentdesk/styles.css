@@ -65,14 +65,15 @@ a:hover { color: var(--navy); }
   z-index: 10;
   background: var(--navy);
   color: var(--white);
-  height: var(--header);
 }
 
 .site-header .wrap {
-  height: 100%;
+  min-height: var(--header);
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 0;
 }
 
 .brand {
@@ -115,9 +116,9 @@ a:hover { color: var(--navy); }
   background: transparent;
   color: var(--white);
   font: inherit;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 6px 8px;
   cursor: pointer;
 }
 
@@ -522,6 +523,65 @@ td:first-child { color: var(--muted); font-weight: 700; width: 24%; }
   font-size: 13px;
 }
 
+.swiss {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.swiss svg { width: 18px; height: 18px; border-radius: 2px; }
+
+.hero .swiss, .who .swiss { color: #fff; }
+
+.gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-top: 22px;
+  padding-bottom: 8px;
+}
+
+.gallery figure {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  min-width: 260px;
+  max-width: min(86vw, 860px);
+  scroll-snap-align: start;
+  margin: 0;
+  background: #10182e;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.gallery img {
+  display: block;
+  height: 420px;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  background: #10182e;
+}
+
+.gallery figcaption {
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  background: var(--white);
+}
+
 @media (max-width: 860px) {
   .hero-grid,
   .questions,
@@ -540,6 +600,12 @@ td:first-child { color: var(--muted); font-weight: 700; width: 24%; }
   }
 
   .btn.header span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  .gallery img {
+    height: auto;
+    max-height: 240px;
+    max-width: min(86vw, 860px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
