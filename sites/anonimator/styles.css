@@ -112,11 +112,20 @@ h1 .em { color: var(--orange); }
 .rules { padding: 28px 0 24px; }
 .table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
 table { width: 100%; border-collapse: collapse; min-width: 920px; }
-.differs table { min-width: 760px; }
+.differs table { min-width: 1040px; }
 .differs th:last-child { color: var(--orange); }
+.differs th .subhead {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #f0d7a4;
+}
 .differs th, .differs td { text-align: center; }
 .differs td:first-child, .differs th:first-child { text-align: left; }
-.differs td:first-child { white-space: normal; min-width: 16rem; max-width: 22rem; }
+.differs td:first-child { white-space: normal; min-width: 16rem; max-width: 26rem; }
 .differs td.yes, .differs td.no { background: transparent; vertical-align: middle; }
 .differs td:last-child { background: #f4faf6; }
 .differs .mark {
