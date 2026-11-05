@@ -74,19 +74,35 @@
   <section>
     <div class="wrap">
       <h2 data-es="La aplicación" data-fr="L&#x27;application" data-de="Die Anwendung" data-it="L&#x27;applicazione">The application</h2>
-      <div class="gallery">
-        <figure>
-          <img src="gallery/desk.jpg" alt="" width="1600" height="1047">
-          <figcaption data-es="Cada bot, con su nombre, color y conversación." data-fr="Chaque bot, avec son nom, sa couleur et sa conversation." data-de="Jeder Bot, mit Name, Farbe und Gespräch." data-it="Ogni bot, con nome, colore e conversazione.">Each bot, with its name, colour and conversation.</figcaption>
-        </figure>
-        <figure>
-          <img src="gallery/sources.jpg" alt="" width="1600" height="933">
-          <figcaption data-es="Carpetas, fuentes de lectura y destino de escritura." data-fr="Dossiers, sources de lecture et destination d&#x27;écriture." data-de="Ordner, Lesequellen und Schreibziel." data-it="Cartelle, fonti di lettura e destinazione di scrittura.">Folders, read sources and the write destination.</figcaption>
-        </figure>
-        <figure>
-          <img src="gallery/engines.jpg" alt="" width="1600" height="1047">
-          <figcaption data-es="El motor se elige y se vincula en este PC." data-fr="Le moteur se choisit et se relie sur ce PC." data-de="Die Engine wird auf diesem PC gewählt und verbunden." data-it="Il motore si sceglie e si collega su questo PC.">The engine is chosen and linked on this PC.</figcaption>
-        </figure>
+      <div class="gallery-wrap">
+        <button type="button" class="gallery-nav prev" aria-label="Previous screenshot" data-label-en="Previous screenshot" data-label-es="Captura anterior" data-label-fr="Capture précédente" data-label-de="Vorheriger Screenshot" data-label-it="Screenshot precedente">‹</button>
+        <div class="gallery" id="agentdesk-gallery" tabindex="0" aria-roledescription="carousel" aria-label="Application screenshots" data-label-en="Application screenshots" data-label-es="Capturas de la aplicación" data-label-fr="Captures de l'application" data-label-de="Screenshots der Anwendung" data-label-it="Screenshot dell'applicazione">
+          <figure>
+            <img src="gallery/01-desk.jpg" alt="AgentDesk desk with bots Analista Excel and Resumen diario" width="1087" height="636" loading="eager">
+            <figcaption data-es="Escritorio: bots Analista Excel y Resumen diario; pestaña Carpetas de mapa." data-fr="Bureau : bots Analista Excel et Resumen diario ; onglet Dossiers de carte." data-de="Schreibtisch: Bots Analista Excel und Resumen diario; Registerkarte Mapping-Ordner." data-it="Scrivania: bot Analista Excel e Resumen diario; scheda Cartelle di mappa.">Desk with bots Analista Excel and Resumen diario; Mapping folders tab.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/02-mapping-folders.jpg" alt="AgentDesk Mapping folders dialog" width="1088" height="641" loading="lazy">
+            <figcaption data-es="Diálogo Carpetas de mapa: lecturas en este PC o carpeta compartida entre agentes." data-fr="Dialogue Dossiers de carte : lectures sur ce PC ou dossier partagé entre agents." data-de="Dialog Mapping-Ordner: Lesungen auf diesem PC oder freigegebener Ordner zwischen Agenten." data-it="Finestra Cartelle di mappa: letture su questo PC o cartella condivisa tra agenti.">Mapping folders dialog: keep readings on this PC or share a folder across agents.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/03-read-sources.jpg" alt="AgentDesk Read sources dialog" width="1089" height="628" loading="lazy">
+            <figcaption data-es="Diálogo Fuentes de lectura: archivos, carpetas e inclusiones/exclusiones." data-fr="Dialogue Sources de lecture : fichiers, dossiers et inclusions/exclusions." data-de="Dialog Lesequellen: Dateien, Ordner sowie Ein-/Ausschlüsse." data-it="Finestra Fonti di lettura: file, cartelle e inclusioni/esclusioni.">Read sources dialog: files, folders and include/exclude filters.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/04-write-destination.jpg" alt="AgentDesk Write destination dialog" width="1086" height="632" loading="lazy">
+            <figcaption data-es="Diálogo Destino de escritura: los agentes son de solo lectura salvo el complemento Escribir archivos." data-fr="Dialogue Destination d'écriture : les agents sont en lecture seule sauf le module Écrire des fichiers." data-de="Dialog Schreibziel: Agenten sind schreibgeschützt, ausser dem Zusatzmodul Write files." data-it="Finestra Destinazione di scrittura: gli agenti sono in sola lettura salvo il componente Write files.">Write destination dialog: agents stay read-only unless the Write files add-on is on.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/05-engines.jpg" alt="AgentDesk Engines dialog" width="1084" height="631" loading="lazy">
+            <figcaption data-es="Diálogo Motores: Codex (Free) y motores CLI Pro; aviso sobre permisos locales." data-fr="Dialogue Moteurs : Codex (Free) et moteurs CLI Pro ; avertissement sur les droits locaux." data-de="Dialog Engines: Codex (Free) und Pro-CLI-Engines; Hinweis zu lokalen Rechten." data-it="Finestra Motori: Codex (Free) e motori CLI Pro; avviso sui permessi locali.">Engines dialog: Codex (Free) and Pro CLI engines; note on local CLI permissions.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/06-edit-bot.jpg" alt="AgentDesk Edit bot dialog" width="1088" height="634" loading="lazy">
+            <figcaption data-es="Diálogo Editar bot: nombre, icono, color e instrucciones de persona." data-fr="Dialogue Modifier le bot : nom, icône, couleur et instructions de persona." data-de="Dialog Bot bearbeiten: Name, Symbol, Farbe und Persona-Anweisungen." data-it="Finestra Modifica bot: nome, icona, colore e istruzioni di persona.">Edit bot dialog: name, icon, colour and persona instructions.</figcaption>
+          </figure>
+        </div>
+        <button type="button" class="gallery-nav next" aria-label="Next screenshot" data-label-en="Next screenshot" data-label-es="Captura siguiente" data-label-fr="Capture suivante" data-label-de="Nächster Screenshot" data-label-it="Screenshot successivo">›</button>
       </div>
     </div>
   </section>
@@ -219,12 +235,45 @@
     for (var j = 0; j < buttons.length; j++) buttons[j].setAttribute("aria-pressed", buttons[j].getAttribute("data-lang-btn") === lang ? "true" : "false");
     try { localStorage.setItem(key, lang); } catch (e) {}
   }
+  function applyLabels(lang) {
+    var labeled = document.querySelectorAll("[data-label-en]");
+    for (var i = 0; i < labeled.length; i++) {
+      var el = labeled[i];
+      var value = el.getAttribute("data-label-" + lang) || el.getAttribute("data-label-en");
+      if (value) el.setAttribute("aria-label", value);
+    }
+  }
+  var _apply = apply;
+  apply = function (lang) {
+    _apply(lang);
+    applyLabels(lang);
+  };
   document.addEventListener("click", function (event) {
     var btn = event.target.closest("[data-lang-btn]");
     if (!btn) return;
     apply(btn.getAttribute("data-lang-btn"));
   });
   apply(initial());
+
+  (function galleryCarousel() {
+    var root = document.getElementById("agentdesk-gallery");
+    if (!root) return;
+    var wrap = root.closest(".gallery-wrap");
+    var slides = root.querySelectorAll("figure");
+    if (!slides.length) return;
+    var index = 0;
+    function go(to) {
+      index = (to + slides.length) % slides.length;
+      var target = slides[index];
+      root.scrollTo({ left: target.offsetLeft - root.offsetLeft, behavior: "smooth" });
+    }
+    wrap.querySelector(".gallery-nav.prev").addEventListener("click", function () { go(index - 1); });
+    wrap.querySelector(".gallery-nav.next").addEventListener("click", function () { go(index + 1); });
+    root.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") { event.preventDefault(); go(index - 1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); go(index + 1); }
+    });
+  })();
 })();
 </script>
 </body>
