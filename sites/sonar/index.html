@@ -90,19 +90,43 @@
   <section>
     <div class="wrap">
       <h2 data-es="La aplicación" data-fr="L&#x27;application" data-de="Die Anwendung" data-it="L&#x27;applicazione">The application</h2>
-      <div class="gallery">
-        <figure>
-          <img src="gallery/overview.jpg" alt="" width="1600" height="812">
-          <figcaption data-es="La carpeta, los hallazgos y los gráficos." data-fr="Le dossier, les constats et les graphiques." data-de="Der Ordner, die Feststellungen und die Diagramme." data-it="La cartella, i rilievi e i grafici.">The folder, the findings and the charts.</figcaption>
-        </figure>
-        <figure>
-          <img src="gallery/findings.jpg" alt="" width="368" height="812">
-          <figcaption data-es="Cada archivo, con su riesgo y su ubicación." data-fr="Chaque fichier, avec son risque et son emplacement." data-de="Jede Datei, mit Risiko und Fundstelle." data-it="Ogni file, con il suo rischio e la sua posizione.">Each file, with its risk and its location.</figcaption>
-        </figure>
-        <figure>
-          <img src="gallery/charts.jpg" alt="" width="1232" height="812">
-          <figcaption data-es="El prompt, los tipos de archivo y las valoraciones de la IA." data-fr="L'invite, les types de fichiers et les évaluations de l'IA." data-de="Der Prompt, die Dateitypen und die KI-Bewertungen." data-it="Il prompt, i tipi di file e le valutazioni dell'IA.">The prompt, the file types and the AI ratings.</figcaption>
-        </figure>
+      <div class="gallery-wrap">
+        <button type="button" class="gallery-nav prev" aria-label="Previous screenshot" data-label-en="Previous screenshot" data-label-es="Captura anterior" data-label-fr="Capture précédente" data-label-de="Vorheriger Screenshot" data-label-it="Screenshot precedente">‹</button>
+        <div class="gallery" id="sonar-gallery" tabindex="0" aria-roledescription="carousel" aria-label="Application screenshots" data-label-en="Application screenshots" data-label-es="Capturas de la aplicación" data-label-fr="Captures de l'application" data-label-de="Screenshots der Anwendung" data-label-it="Screenshot dell'applicazione">
+          <figure>
+            <img src="gallery/01-summary.jpg" alt="" width="1919" height="1034" loading="eager">
+            <figcaption data-es="Resumen: árbol de carpetas y gráficos (tipos, estado, valoraciones IA) de test-lab." data-fr="Résumé : arborescence et graphiques (types, état, évaluations IA) de test-lab." data-de="Übersicht: Ordnerbaum und Diagramme (Typen, Status, KI-Bewertungen) von test-lab." data-it="Riepilogo: albero cartelle e grafici (tipi, stato, valutazioni IA) di test-lab.">Summary dashboard: folder tree and charts (file types, status, AI ratings) for test-lab.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/02-file-list.jpg" alt="" width="1922" height="1039" loading="lazy">
+            <figcaption data-es="Lista de archivos de la carpeta, con estado de riesgo y columnas de revisión." data-fr="Liste des fichiers du dossier, avec état de risque et colonnes de revue." data-de="Dateiliste des Ordners mit Risikostatus und Review-Spalten." data-it="Elenco file della cartella, con stato di rischio e colonne di revisione.">File list for the folder with risk status and review columns.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/03-review-dialog.jpg" alt="" width="1289" height="640" loading="lazy">
+            <figcaption data-es="Diálogo de revisión sobre hallazgos del análisis local." data-fr="Dialogue de revue sur les constats de l'analyse locale." data-de="Review-Dialog über Feststellungen der lokalen Analyse." data-it="Finestra di revisione sui rilievi dell'analisi locale.">Review-finding dialog over local analysis findings.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/04-local-findings.jpg" alt="" width="1294" height="645" loading="lazy">
+            <figcaption data-es="Tabla de hallazgos del análisis local tras una revisión confirmada." data-fr="Tableau des constats de l'analyse locale après une revue confirmée." data-de="Tabelle der lokalen Analysefeststellungen nach bestätigtem Review." data-it="Tabella dei rilievi dell'analisi locale dopo una revisione confermata.">Local analysis findings table after a confirmed review.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/05-ai-details.jpg" alt="" width="1301" height="793" loading="lazy">
+            <figcaption data-es="Detalle del análisis con IA (inventario EUC) con hallazgos." data-fr="Détail de l'analyse IA (inventaire EUC) avec constats." data-de="KI-Analysedetails (EUC-Inventar) mit Feststellungen." data-it="Dettagli dell'analisi IA (inventario EUC) con rilievi.">AI analysis details (EUC inventory) with findings.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/06-pdf-report.jpg" alt="" width="1920" height="1041" loading="lazy">
+            <figcaption data-es="Informe PDF generado del archivo, abierto sobre la aplicación." data-fr="Rapport PDF généré du fichier, ouvert sur l'application." data-de="Generierter PDF-Dateibericht über der App." data-it="Report PDF del file generato, aperto sull'app.">Generated PDF file report over the app.</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/07-ai-connectors.jpg" alt="" width="1262" height="739" loading="lazy">
+            <figcaption data-es="Diálogo de servicios / conectores de IA (Grok Build activo)." data-fr="Dialogue des services / connecteurs IA (Grok Build actif)." data-de="Dialog der KI-Dienste / Konnektoren (Grok Build aktiv)." data-it="Finestra dei servizi / connettori IA (Grok Build attivo).">AI services / connectors dialog (Grok Build active).</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery/08-ai-questions.jpg" alt="" width="1529" height="963" loading="lazy">
+            <figcaption data-es="Diálogo de preguntas a la IA con prompts GxP integrados." data-fr="Dialogue des questions IA avec invites GxP intégrées." data-de="KI-Fragen-Dialog mit integrierten GxP-Prompts." data-it="Finestra delle domande IA con prompt GxP integrati.">AI questions dialog with built-in GxP prompts.</figcaption>
+          </figure>
+        </div>
+        <button type="button" class="gallery-nav next" aria-label="Next screenshot" data-label-en="Next screenshot" data-label-es="Captura siguiente" data-label-fr="Capture suivante" data-label-de="Nächster Screenshot" data-label-it="Screenshot successivo">›</button>
       </div>
     </div>
   </section>
@@ -287,12 +311,45 @@
     }
     try { localStorage.setItem(key, lang); } catch (e) {}
   }
+  function applyLabels(lang) {
+    var labeled = document.querySelectorAll("[data-label-en]");
+    for (var i = 0; i < labeled.length; i++) {
+      var el = labeled[i];
+      var value = el.getAttribute("data-label-" + lang) || el.getAttribute("data-label-en");
+      if (value) el.setAttribute("aria-label", value);
+    }
+  }
+  var _apply = apply;
+  apply = function (lang) {
+    _apply(lang);
+    applyLabels(lang);
+  };
   document.addEventListener("click", function (event) {
     var btn = event.target.closest("[data-lang-btn]");
     if (!btn) return;
     apply(btn.getAttribute("data-lang-btn"));
   });
   apply(initial());
+
+  (function galleryCarousel() {
+    var root = document.getElementById("sonar-gallery");
+    if (!root) return;
+    var wrap = root.closest(".gallery-wrap");
+    var slides = root.querySelectorAll("figure");
+    if (!slides.length) return;
+    var index = 0;
+    function go(to) {
+      index = (to + slides.length) % slides.length;
+      var target = slides[index];
+      root.scrollTo({ left: target.offsetLeft - root.offsetLeft, behavior: "smooth" });
+    }
+    wrap.querySelector(".gallery-nav.prev").addEventListener("click", function () { go(index - 1); });
+    wrap.querySelector(".gallery-nav.next").addEventListener("click", function () { go(index + 1); });
+    root.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") { event.preventDefault(); go(index - 1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); go(index + 1); }
+    });
+  })();
 })();
 </script>
 </body>
