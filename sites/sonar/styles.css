@@ -648,3 +648,6 @@ td:first-child { color: var(--muted); font-weight: 700; width: 24%; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.edition .price { margin: 0 0 8px; font-size: 1.05rem; }
+.price-note { margin: 4px 0 0; font-size: .85rem; color: var(--muted); }
