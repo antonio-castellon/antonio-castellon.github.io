@@ -1,3 +1,13 @@
 /downloads/AgentDesk-0.2.3-win-x64.zip https://github.com/antonio-castellon/antonio-castellon.github.io/releases/download/agentdesk-0.2.3/AgentDesk-0.2.3-win-x64.zip 302
 /downloads/GxpSonar-0.2.5-win-x64.zip https://github.com/antonio-castellon/antonio-castellon.github.io/releases/download/gxp-sonar-0.2.5/GxpSonar-0.2.5-win-x64.zip 302
 /downloads/GxpSonar-0.2.7-win-x64.zip https://github.com/antonio-castellon/antonio-castellon.github.io/releases/download/gxp-sonar-0.2.7/GxpSonar-0.2.7-win-x64.zip 302
+/gxp-sonar https://sonar.castellon.ch/ 301
+/gxp-sonar.html https://sonar.castellon.ch/ 301
+/anonimator https://anonimator.castellon.ch/ 301
+/anonimator.html https://anonimator.castellon.ch/ 301
+/sites/sonar https://sonar.castellon.ch/ 301
+/sites/sonar/ https://sonar.castellon.ch/ 301
+/sites/sonar/* https://sonar.castellon.ch/:splat 301
+/sites/anonimator https://anonimator.castellon.ch/ 301
+/sites/anonimator/ https://anonimator.castellon.ch/ 301
+/sites/anonimator/* https://anonimator.castellon.ch/:splat 301
